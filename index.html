@@ -1,0 +1,3387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGHAM Church | Almighty God of Heaven Apostolic Ministry</title>
+<meta name="description" content="Official website of AGHAM - Almighty God of Heaven Apostolic Ministry. Join us for worship, events, prayer requests, announcements, and fellowship.">
+<meta name="keywords" content="AGHAM Church, Apostolic Ministry, church in Teresa Rizal, prayer request, worship service, Christian church Philippines">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:title" content="AGHAM Church">
+<meta property="og:description" content="A place to Worship, Grow, and Serve God Together.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://i.imgur.com/EsoHkMb.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AGHAM Church">
+<meta name="twitter:description" content="A place to Worship, Grow, and Serve God Together.">
+<meta name="twitter:image" content="https://i.imgur.com/EsoHkMb.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Caveat:wght@400;700&family=Alegreya:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Alegreya:wght@700&display=swap" rel="stylesheet">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+body.menu-open {
+  overflow: hidden;
+}
+
+/* GLASS NAVBAR */
+#navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.7);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Logo glow */
+.logo-glow {
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.9),
+              0 0 40px rgba(96, 165, 250, 0.6);
+}
+
+/* Navbar shrink */
+.shrink {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+/* Slide animation */
+@keyframes slideRight {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.slide-right {
+  animation: slideRight 0.7s ease;
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.92);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index: 9999;
+  padding: 20px;
+}
+#lightbox img {
+  max-width: 92%;
+  max-height: 88%;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+#lightbox .lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* REAL LOGO WATERMARK */
+.logo-watermark-section {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+.logo-watermark-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+.logo-watermark-bg img {
+  width: min(420px, 62vw);
+  max-width: 420px;
+  opacity: 0.07;
+  filter: blur(3px) grayscale(10%);
+  transform: scale(1.06);
+  user-select: none;
+}
+.logo-watermark-content {
+  position: relative;
+  z-index: 1;
+}
+.logo-watermark-soft {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.92),
+    rgba(255,255,255,0.84),
+    rgba(255,255,255,0.92)
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .logo-watermark-bg img {
+    width: min(250px, 65vw);
+    opacity: 0.06;
+    filter: blur(2px);
+  }
+}
+
+/* DAILY VERSE */
+.agham-daily-verse-section {
+  padding: 88px 20px;
+  background-color: #dbeafe !important;
+  background-image: linear-gradient(180deg, #dbeafe 0%, #eff6ff 55%, #dbeafe 100%) !important;
+  border-top: 4px solid #93c5fd;
+  border-bottom: 4px solid #93c5fd;
+}
+.agham-daily-verse-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.agham-daily-verse-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #f8fbff !important;
+  border-radius: 24px;
+  padding: 36px 24px;
+  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.14);
+  border: 2px solid #bfdbfe;
+  text-align: center;
+}
+.agham-daily-verse-badge {
+  display: inline-block;
+  background: #bfdbfe;
+  color: #1d4ed8;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.agham-daily-verse-title {
+  font-family: 'Caveat', cursive;
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+.agham-daily-verse-subtitle {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+.agham-daily-verse-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.9rem;
+  line-height: 1.5;
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.agham-daily-verse-reference {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 16px;
+}
+.agham-daily-verse-thought {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #334155;
+  font-family: 'Caveat', cursive;
+  font-size: 1.45rem;
+  line-height: 1.5;
+}
+.agham-daily-verse-actions {
+  margin-top: 28px;
+}
+.agham-refresh-verse-btn {
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.agham-refresh-verse-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+.agham-refresh-verse-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Shared card polish */
+.section-subtitle {
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.data-card {
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+.data-card:hover {
+  transform: translateY(-4px);
+}
+.loading-card {
+  min-height: 120px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #eff6ff 25%, #dbeafe 50%, #eff6ff 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite linear;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (max-width: 768px) {
+  .agham-daily-verse-section {
+  padding: 64px 16px;
+}
+  .agham-daily-verse-card {
+    padding: 26px 18px;
+    border-radius: 20px;
+  }
+  .agham-daily-verse-title {
+    font-size: 2.1rem;
+  }
+  .agham-daily-verse-text {
+    font-size: 1.6rem;
+  }
+  .agham-daily-verse-reference {
+    font-size: 1.3rem;
+  }
+  .agham-daily-verse-thought {
+    font-size: 1.2rem;
+  }
+  .agham-refresh-verse-btn {
+    width: 100%;
+  }
+}
+
+/* =========================
+   VISUAL HIERARCHY UPGRADE
+========================= */
+
+/* Consistent section spacing */
+.section-shell {
+  padding-top: 92px;
+  padding-bottom: 92px;
+}
+
+.section-shell-sm {
+  padding-top: 76px;
+  padding-bottom: 76px;
+}
+
+.section-shell-lg {
+  padding-top: 108px;
+  padding-bottom: 108px;
+}
+
+/* Shared content container */
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Unified section heading system */
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.section-heading-light {
+  color: #ffffff;
+}
+
+.section-subtitle {
+  color: #64748b;
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.section-subtitle-light {
+  color: rgba(255,255,255,0.88);
+}
+
+
+
+/* Better readable paragraph width */
+.content-readable {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+/* More polished cards */
+.soft-card {
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Better card content rhythm */
+.card-title {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: #475569;
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+/* Stronger visual separation */
+.section-divider-top {
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.section-divider-bottom {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+/* Consistent buttons */
+.btn-primary-agham {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: #1d4ed8;
+  box-shadow: 0 10px 25px rgba(255,255,255,0.12);
+}
+
+.btn-primary-agham:hover {
+  transform: translateY(-2px);
+  background: #eff6ff;
+}
+
+.btn-secondary-agham {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.32);
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+
+.btn-secondary-agham:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.18);
+}
+
+/* Hero text rhythm */
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.05;
+  font-weight: 800;
+  margin-bottom: 18px;
+  text-wrap: balance;
+}
+
+.hero-subtitle {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.8;
+  color: rgba(255,255,255,0.9);
+}
+
+/* About and prayer text balance */
+.section-body-text {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: #334155;
+}
+
+/* Better mobile spacing */
+@media (max-width: 768px) {
+  .section-shell,
+.section-shell-sm,
+.section-shell-lg {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+  .section-heading {
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 24px;
+  }
+}
+
+/* =========================
+   CARD HIERARCHY UPGRADE
+========================= */
+
+.card-system {
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-system:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  border-color: rgba(147, 197, 253, 0.9);
+}
+
+.card-system-pad {
+  padding: 28px 24px;
+}
+
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.card-title-lg {
+  font-size: 1.22rem;
+  line-height: 1.35;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.card-title-md {
+  font-size: 1.08rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.card-meta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: #475569;
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+.card-centered {
+  text-align: center;
+}
+
+.card-link-indicator {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.card-link-indicator::after {
+  content: "→";
+  transition: transform 0.25s ease;
+}
+
+a.card-system:hover .card-link-indicator::after {
+  transform: translateX(4px);
+}
+
+.card-soft-blue {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.card-soft-slate {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.card-soft-highlight {
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+}
+
+.card-grid-balanced {
+  align-items: stretch;
+}
+
+.card-grid-balanced > * {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .card-system-pad {
+    padding: 22px 18px;
+  }
+
+  .card-title-lg {
+    font-size: 1.1rem;
+  }
+
+  .card-title-md {
+    font-size: 1rem;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+/* =========================
+   SECTION RHYTHM POLISH
+========================= */
+
+.page-flow > section {
+  position: relative;
+}
+
+/* Better alternation of backgrounds */
+.bg-soft-white {
+  background: #ffffff;
+}
+
+.bg-soft-slate {
+  background: #f8fafc;
+}
+
+.bg-soft-blue {
+  background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+/* Shared top/bottom rhythm */
+.rhythm-tight {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.rhythm-regular {
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+
+.rhythm-loose {
+  padding-top: 108px;
+  padding-bottom: 108px;
+}
+
+/* Gentle separators */
+.section-top-fade::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(148, 163, 184, 0.28),
+    transparent
+  );
+}
+
+.section-bottom-fade::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(148, 163, 184, 0.22),
+    transparent
+  );
+}
+
+/* Better scroll anchoring for navbar */
+section[id] {
+  scroll-margin-top: 110px;
+}
+
+/* Container rhythm helpers */
+.stack-heading {
+  margin-bottom: 48px;
+}
+
+.stack-content-md {
+  margin-top: 28px;
+}
+
+.stack-content-lg {
+  margin-top: 40px;
+}
+
+/* Better footer separation */
+.footer-soft-separator {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile rhythm tuning */
+@media (max-width: 768px) {
+  .rhythm-tight,
+  .rhythm-regular,
+  .rhythm-loose {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .stack-heading {
+    margin-bottom: 36px;
+  }
+
+  section[id] {
+    scroll-margin-top: 92px;
+  }
+
+/* =========================
+   MISSION / VISION / CORE VALUES
+========================= */
+
+.identity-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.identity-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.identity-card {
+  background: #ffffff;
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  border-radius: 24px;
+  padding: 24px 20px;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  text-align: center;
+}
+
+.identity-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 42px rgba(37, 99, 235, 0.12);
+  border-color: rgba(96, 165, 250, 0.95);
+}
+
+.identity-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  font-size: 1.9rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.85), 0 8px 18px rgba(37, 99, 235, 0.08);
+}
+
+.identity-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.identity-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.identity-text {
+  color: #475569;
+  line-height: 1.8;
+  font-size: 0.98rem;
+}
+
+.core-values-list {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.core-value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.core-value-bullet {
+  color: #2563eb;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.core-value-text {
+  color: #334155;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 992px) {
+  .identity-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .identity-card {
+    min-height: 100%;
+    padding: 34px 28px;
+    text-align: left;
+    border-radius: 28px;
+  }
+
+  .identity-icon {
+    margin: 0 0 20px 0;
+  }
+
+  .identity-title {
+    font-size: 1.4rem;
+  }
+
+  .identity-text {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+/* =========================
+   LEADERSHIP SECTION
+========================= */
+
+.leadership-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.leadership-remarks-card {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(191, 219, 254, 0.95);
+  border-radius: 28px;
+  padding: 30px 24px;
+  box-shadow: 0 14px 36px rgba(37, 99, 235, 0.08);
+  position: relative;
+}
+
+.leadership-remarks-badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.leadership-remarks-title {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.leadership-remarks-subtitle {
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.leadership-remarks-body {
+  color: #334155;
+  line-height: 1.95;
+  font-size: 1rem;
+}
+
+.leadership-remarks-body p {
+  margin-bottom: 18px;
+}
+
+.leadership-signature {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.leadership-signature strong {
+  display: block;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.leadership-signature span {
+  display: block;
+  color: #2563eb;
+  margin-top: 4px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.leadership-desktop {
+  display: none;
+}
+
+.leadership-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: nowrap;
+  margin-bottom: 28px;
+}
+
+.leadership-row:last-child {
+  margin-bottom: 0;
+}
+
+.leader-card {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  background: #ffffff;
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(37, 99, 235, 0.14);
+  border-color: rgba(96, 165, 250, 0.95);
+}
+
+.leader-card.head-pastor {
+  max-width: 340px;
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(37, 99, 235, 0.22);
+  border: 2px solid rgba(96, 165, 250, 0.7);
+}
+
+.leader-image-wrap {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #dbeafe 0%, #eff6ff 100%);
+}
+
+.leader-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.leader-card:hover .leader-image {
+  transform: scale(1.05);
+}
+
+.leader-info {
+  padding: 18px 16px 20px;
+  text-align: center;
+}
+
+.leader-name {
+  font-size: 1.02rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.leader-role {
+  color: #2563eb;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.leadership-mobile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.leader-mobile-card {
+  background: #ffffff;
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.leader-mobile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.13);
+  border-color: rgba(96, 165, 250, 0.95);
+}
+
+.leader-mobile-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.leader-mobile-card:hover .leader-mobile-image {
+  transform: scale(1.04);
+}
+
+.leader-mobile-info {
+  padding: 16px 14px 18px;
+  text-align: center;
+}
+
+.opening-remarks {
+  font-family: 'Alegreya', serif;
+  white-space: pre-line;
+  font-size: 1.12rem;
+  line-height: 1.95;
+  color: #334155;
+}
+
+@media (min-width: 992px) {
+  .leadership-desktop {
+    display: block;
+  }
+
+  .leadership-mobile {
+    display: none;
+  }
+
+  .leadership-row.top-row .leader-card {
+    max-width: 320px;
+  }
+
+  .leadership-row.second-row .leader-card,
+  .leadership-row.third-row .leader-card {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 991px) {
+  .leadership-remarks-card {
+    padding: 24px 18px;
+    border-radius: 24px;
+    margin-bottom: 36px;
+  }
+
+  .leadership-remarks-body {
+    font-size: 0.97rem;
+    line-height: 1.85;
+  }
+
+  .leadership-desktop {
+    display: none;
+  }
+
+  .leadership-mobile {
+    display: grid;
+  }
+}
+
+@media (max-width: 768px) {
+  .opening-remarks {
+    font-size: 1.03rem;
+  }
+
+  /* LETTER STYLE (Opening Remarks) */
+  .leadership-remarks-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 28px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow:
+      0 12px 30px rgba(15, 23, 42, 0.08),
+      inset 0 1px 0 rgba(255,255,255,0.6);
+    position: relative;
+  }
+
+  /* subtle paper glow */
+  .leadership-remarks-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: radial-gradient(circle at top left, rgba(37,99,235,0.08), transparent 60%);
+    pointer-events: none;
+  }
+
+  /* inner content above glow */
+  .leadership-remarks-card * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* MOBILE LEADERSHIP */
+  .leadership-mobile {
+    display: block !important;
+    margin-top: 28px;
+  }
+
+  .leader-mobile-featured {
+    background: #ffffff;
+    border: 1px solid rgba(159, 195, 255, 0.9);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+    margin-bottom: 20px;
+  }
+
+  .leader-mobile-featured-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #f3f4f6;
+  }
+
+  .leader-mobile-featured-info {
+    padding: 18px 16px 20px;
+    text-align: center;
+  }
+
+  .leader-mobile-featured-name {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .leader-mobile-featured-role {
+    margin: 8px 0 0;
+    font-size: 0.98rem;
+    line-height: 1.45;
+    font-weight: 700;
+    color: #2563eb;
+  }
+
+  .leader-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .leader-mobile-card {
+    background: #ffffff;
+    border: 1px solid rgba(219, 234, 254, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  }
+
+  .leader-mobile-image {
+    width: 100%;
+    height: 185px;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #f3f4f6;
+  }
+
+  .leader-mobile-info {
+    padding: 12px 10px 14px;
+    text-align: center;
+  }
+
+  .leader-name {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.25;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .leader-role {
+    margin: 7px 0 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #2563eb;
+  }
+}
+
+/* LETTER STYLE (Opening Remarks) */
+.leadership-remarks-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 28px;
+  border-radius: 24px;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+
+  box-shadow: 
+    0 12px 30px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  position: relative;
+}
+
+/* subtle paper glow */
+.leadership-remarks-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, rgba(37,99,235,0.08), transparent 60%);
+  pointer-events: none;
+}
+
+/* inner content above glow */
+.leadership-remarks-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* MOBILE LEADERSHIP */
+.leadership-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .leadership-mobile {
+    display: block !important;
+    margin-top: 28px;
+  }
+
+  .leader-mobile-featured {
+    background: #ffffff;
+    border: 1px solid rgba(159, 195, 255, 0.9);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+    margin-bottom: 20px;
+  }
+
+  .leader-mobile-featured-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #f3f4f6;
+  }
+
+  .leader-mobile-featured-info {
+    padding: 18px 16px 20px;
+    text-align: center;
+  }
+
+  .leader-mobile-featured-name {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .leader-mobile-featured-role {
+    margin: 8px 0 0;
+    font-size: 0.98rem;
+    line-height: 1.45;
+    font-weight: 700;
+    color: #2563eb;
+  }
+
+  .leader-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .leader-mobile-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  }
+
+  .leader-mobile-image {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #f3f4f6;
+  }
+
+  .leader-mobile-info {
+    padding: 12px 10px 14px;
+    text-align: center;
+  }
+
+  .leader-name {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.25;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .leader-role {
+    margin: 7px 0 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #2563eb;
+  }
+}
+
+/* ===== FORCE FIX: Leadership Remarks Paper Background ===== */
+#leadership .leadership-remarks-card {
+  max-width: 900px !important;
+  margin: 0 auto 56px !important;
+  padding: 40px 28px !important;
+  border-radius: 28px !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  box-shadow:
+    0 14px 36px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#leadership .leadership-remarks-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+#leadership .leadership-remarks-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== PYRAMID STRUCTURE ===== */
+
+/* Top (Head Pastor) */
+.leadership-row.top-row {
+  margin-bottom: 36px;
+}
+
+/* Second row (3 leaders) */
+.leadership-row.second-row {
+  margin-bottom: 28px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+/* Third row (3 leaders) */
+.leadership-row.third-row {
+  margin-top: 4px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.leader-card {
+  transition: all 0.35s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* ===== DESKTOP PYRAMID FIX ===== */
+@media (min-width: 992px) {
+  .leadership-desktop {
+    display: block !important;
+  }
+
+  .leadership-desktop-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .leadership-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch;
+    gap: 28px;
+    flex-wrap: nowrap !important;
+  }
+
+  .leadership-row.top-row {
+    margin-bottom: 38px;
+  }
+
+  .leadership-row.second-row {
+    margin-bottom: 28px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .leadership-row.third-row {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  .leadership-row.top-row .leader-card.head-pastor {
+    width: 340px;
+    max-width: 340px;
+    border: 2px solid rgba(96, 165, 250, 0.7);
+    box-shadow: 0 28px 60px rgba(37, 99, 235, 0.18);
+  }
+
+  .leadership-row.second-row .leader-card,
+  .leadership-row.third-row .leader-card {
+    width: 250px;
+    max-width: 250px;
+  }
+
+  .leader-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(219, 234, 254, 0.95) !important;
+    border-radius: 26px !important;
+    overflow: hidden !important;
+    box-shadow: 0 14px 34px rgba(37, 99, 235, 0.08) !important;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease !important;
+  }
+
+  .leader-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 24px 48px rgba(37, 99, 235, 0.14) !important;
+    border-color: rgba(96, 165, 250, 0.95) !important;
+  }
+
+  .leader-image-wrap {
+    background: linear-gradient(180deg, #dbeafe 0%, #eff6ff 100%) !important;
+  }
+
+  .leader-image {
+    width: 100% !important;
+    aspect-ratio: 3 / 4 !important;
+    object-fit: cover !important;
+    display: block;
+  }
+
+  .leader-info {
+    padding: 18px 16px 20px !important;
+    text-align: center !important;
+  }
+
+  .leader-name {
+    font-size: 1.02rem !important;
+    font-weight: 800 !important;
+    line-height: 1.35 !important;
+    color: #0f172a !important;
+    margin-bottom: 8px !important;
+  }
+
+  .leader-role {
+    color: #2563eb !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    font-weight: 600 !important;
+  }
+
+  .leadership-mobile {
+    display: none !important;
+  }
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 998;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+#backToTopBtn:hover {
+  background: #1d4ed8;
+}
+
+/* FLOATING MESSENGER BUTTON */
+.messenger-float {
+  position: fixed;
+  right: 20px;
+  bottom: 86px; /* above back-to-top */
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0084ff, #1da1ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 132, 255, 0.35);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.messenger-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 30px rgba(0, 132, 255, 0.45);
+}
+
+.messenger-float img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .messenger-float {
+    right: 16px;
+    bottom: 84px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .messenger-float img {
+    width: 26px;
+    height: 26px;
+  }
+
+.messenger-float {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 9999; /* IMPORTANT taasan */
+}
+
+/* FINAL LOW-RISK POLISH */
+.section-top-fade::before,
+.section-bottom-fade::after {
+  opacity: 0.9;
+}
+
+.section-shell {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    scroll-margin-top: 105px;
+  }
+}
+
+/* Softer visual flow between sections */
+.bg-gray-100.section-top-fade::before,
+.bg-white.section-top-fade::before,
+.logo-watermark-section.section-top-fade::before,
+.leadership-section.section-top-fade::before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(148, 163, 184, 0.22),
+    transparent
+  );
+}
+
+.bg-gray-100.section-bottom-fade::after,
+.bg-white.section-bottom-fade::after,
+.logo-watermark-section.section-bottom-fade::after,
+.leadership-section.section-bottom-fade::after {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(148, 163, 184, 0.18),
+    transparent
+  );
+}
+
+/* Slightly better content breathing room */
+.section-container {
+  position: relative;
+  z-index: 1;
+}
+</style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed w-full z-50 shadow transition-all">
+  <div id="navContent" class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center gap-4">
+
+    <div class="flex items-center gap-4">
+      <img src="https://i.imgur.com/EsoHkMb.png"
+      class="w-20 h-20 md:w-24 md:h-24 rounded-full logo-glow">
+
+      <h1 class="text-2xl md:text-4xl font-extrabold gradient-text">AGHAM</h1>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-4 lg:gap-5 font-medium text-[15px] xl:text-base whitespace-nowrap ml-auto text-slate-800">
+  <a href="#" class="hover:text-blue-600 transition">Home</a>
+  <a href="#about" class="hover:text-blue-600 transition">About</a>
+  <a href="#identity" class="hover:text-blue-600 transition">Mission</a>
+  <a href="#services" class="hover:text-blue-600 transition">Services</a>
+  <a href="#events" class="hover:text-blue-600 transition">Events</a>
+<a href="#leadership" class="hover:text-blue-600 transition">Leadership</a>
+  <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
+  <a href="#prayer" class="hover:text-blue-600 transition">Prayer</a>
+  <a href="#giving" class="hover:text-blue-600 transition">Giving</a>
+  <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+</nav>
+
+    <button onclick="toggleMenu()" class="md:hidden text-2xl text-blue-700 font-bold">☰</button>
+  </div>
+</header>
+
+<!-- MOBILE OVERLAY -->
+<div id="mobileOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"></div>
+
+<!-- MOBILE SIDE MENU -->
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 text-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y">
+  <div class="flex justify-between items-center p-5 border-b border-white/20">
+    <div class="flex items-center gap-3">
+      <img src="https://i.imgur.com/EsoHkMb.png" class="w-12 h-12 rounded-full shadow-lg border border-white/30">
+      <div>
+        <h2 class="text-xl font-bold">AGHAM</h2>
+        <p class="text-xs text-white/80">Church Menu</p>
+      </div>
+    </div>
+    <button onclick="toggleMenu()" class="text-2xl bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition">&times;</button>
+  </div>
+
+  <div class="px-5 pt-4 pb-2">
+    <p class="text-sm text-white/80">Navigate</p>
+  </div>
+
+  <nav class="flex flex-col px-4 pb-6 space-y-2 text-lg font-medium">
+    <a href="#" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🏠</span><span>Home</span>
+    </a>
+    <a href="#about" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📖</span><span>About</span>
+    </a>
+<a href="#identity" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+  <span>📌</span><span>Mission</span>
+</a>
+    <a href="#services" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>⛪</span><span>Services</span>
+    </a>
+    <a href="#events" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📅</span><span>Events</span>
+    </a>
+<a href="#leadership" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+  <span>👥</span><span>Leadership</span>
+</a>
+<a href="#gallery" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🖼️</span><span>Gallery</span>
+    </a>
+    <a href="#prayer" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🙏</span><span>Prayer</span>
+    </a>
+<a href="#giving" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+  <span>💳</span><span>Giving</span>
+</a>
+    <a href="#contact" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📞</span><span>Contact</span>
+    </a>
+  </nav>
+
+  <div class="absolute bottom-0 left-0 right-0 p-5 border-t border-white/20 bg-black/10">
+    <p class="text-xs text-white/80 text-center">Almighty God of Heaven Apostolic Ministry</p>
+  </div>
+</div>
+
+<main class="page-flow">
+<!-- HERO -->
+<section id="home" class="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 text-white text-center pt-40 pb-28 px-4 section-bottom-fade">
+  <div class="absolute inset-0 bg-black/10"></div>
+  <div class="relative max-w-5xl mx-auto">
+    <p class="hero-eyebrow" data-aos="fade-up">
+      Welcome to AGHAM
+    </p>
+
+    <h2 class="hero-title" data-aos="fade-up">
+      Almighty God of Heaven Apostolic Ministry
+    </h2>
+
+    <p class="hero-subtitle" data-aos="fade-up">
+      A place to worship, grow in faith, and serve God together as one church family.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up">
+      <a href="#prayer" class="btn-primary-agham">
+        Send Prayer Request
+      </a>
+      <a href="#events" class="btn-secondary-agham">
+        View Upcoming Events
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEW HERE -->
+<section class="relative bg-white py-20 px-4 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[420px] h-[420px] bg-blue-100/40 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-sky-100/40 blur-3xl rounded-full"></div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold border border-blue-100">
+        New Here?
+      </span>
+
+      <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">
+        We’d Love to Welcome You
+      </h2>
+
+      <p class="mt-4 text-base md:text-lg text-slate-600 leading-relaxed">
+        Whether you are visiting for the first time, looking for a church family,
+        or seeking prayer, you are always welcome at AGHAM Church.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="group rounded-3xl bg-gradient-to-br from-white to-blue-50 border border-blue-100 shadow-[0_12px_35px_rgba(37,99,235,0.10)] p-7 transition duration-300 hover:-translate-y-2 hover:shadow-[0_18px_45px_rgba(37,99,235,0.16)]" data-aos="fade-up">
+        <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg mb-5">
+          📍
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Visit Us</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Join us in Teresa, Rizal and experience worship, fellowship, and God’s presence with our church family.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group rounded-3xl bg-gradient-to-br from-white to-sky-50 border border-sky-100 shadow-[0_12px_35px_rgba(14,165,233,0.10)] p-7 transition duration-300 hover:-translate-y-2 hover:shadow-[0_18px_45px_rgba(14,165,233,0.16)]" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-14 h-14 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-2xl shadow-lg mb-5">
+          ⏰
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Service Schedule</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Worship with us every Sunday and stay connected through our special events, fellowships, and church gatherings.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group rounded-3xl bg-gradient-to-br from-white to-indigo-50 border border-indigo-100 shadow-[0_12px_35px_rgba(99,102,241,0.10)] p-7 transition duration-300 hover:-translate-y-2 hover:shadow-[0_18px_45px_rgba(99,102,241,0.16)]" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-14 h-14 rounded-2xl bg-indigo-500 text-white flex items-center justify-center text-2xl shadow-lg mb-5">
+          💬
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Connect With Us</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Have questions, prayer needs, or want to know more? Reach out and we’d be glad to connect with you.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center" data-aos="fade-up">
+      <a href="visit.html"
+         class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-700 to-sky-500 text-white font-semibold shadow-[0_14px_35px_rgba(37,99,235,0.28)] hover:scale-[1.03] hover:shadow-[0_18px_45px_rgba(37,99,235,0.36)] transition duration-300">
+        Plan Your Visit
+      </a>
+
+      <p class="mt-4 text-sm text-slate-500">
+        We’d be happy to welcome you and help you get connected.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DAILY VERSE -->
+<section id="daily-verse" class="agham-daily-verse-section section-top-fade section-bottom-fade"
+style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, #eff6ff 55%, #dbeafe 100%); border-top:4px solid #93c5fd; border-bottom:4px solid #93c5fd;">
+  <div class="agham-daily-verse-wrap">
+    <div class="agham-daily-verse-card" data-aos="fade-up" style="background:#f8fbff; border:2px solid #bfdbfe;">
+      <span class="agham-daily-verse-badge">Daily Devotional</span>
+      <h3 class="agham-daily-verse-title">Verse of the Day</h3>
+      <p class="agham-daily-verse-subtitle">A fresh Word to strengthen your faith today.</p>
+
+      <p id="aghamVerseText" class="agham-daily-verse-text">Loading today's verse...</p>
+      <p id="aghamVerseReference" class="agham-daily-verse-reference"></p>
+      <p id="aghamVerseThought" class="agham-daily-verse-thought"></p>
+
+      <div class="agham-daily-verse-actions">
+        <button id="aghamRefreshVerseBtn" class="agham-refresh-verse-btn" type="button">
+          Get Another Verse
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ANNOUNCEMENTS -->
+<section id="announcements" class="section-shell-sm bg-blue-600 text-white section-top-fade section-bottom-fade">
+  <div class="section-container">
+    <div class="text-center stack-heading">
+      <span class="inline-block mb-3 px-4 py-2 rounded-full bg-white/15 text-white text-xs font-bold uppercase tracking-wide" data-aos="fade-up">
+        Ministry Updates
+      </span>
+      <h3 class="section-heading section-heading-light" data-aos="fade-up">Announcements</h3>
+      <p class="section-subtitle section-subtitle-light" data-aos="fade-up">
+        Stay updated with the latest church reminders, activities, and important ministry notices.
+      </p>
+    </div>
+    <div id="announcementsList" class="grid md:grid-cols-3 gap-4"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="relative overflow-hidden section-shell text-center max-w-6xl mx-auto px-4 py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-white rounded-[36px] section-top-fade section-bottom-fade">
+  <!-- Premium Soft Background -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[420px] h-[420px] bg-blue-100/50 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-sky-100/40 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-10 left-0 w-64 h-64 bg-indigo-100/30 blur-3xl rounded-full"></div>
+  </div>
+
+  <div class="relative bg-gradient-to-t from-blue-100 via-blue-50 to-white border border-blue-200 rounded-[32px] shadow-[0_30px_90px_rgba(15,23,42,0.16)] px-6 md:px-10 py-12 md:py-14">
+    <span class="section-kicker">Who We Are</span>
+    <h3 class="section-heading">About Us</h3>
+
+    <p class="section-subtitle mb-10 max-w-2xl mx-auto">
+      A Christ-centered church community committed to faith, discipleship, and worship.
+    </p>
+
+    <div class="max-w-3xl mx-auto text-left md:text-center space-y-6">
+      <p class="section-body-text content-readable leading-relaxed">
+        Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.
+      </p>
+
+      <p class="section-body-text content-readable leading-relaxed">
+        We are a church family devoted to worshiping God in Spirit and in truth, growing together in faith, and living out His Word in our daily lives. Our desire is to create a place where everyone can encounter the presence of God, experience His love, and discover purpose through a personal relationship with Him.
+      </p>
+
+      <p class="section-body-text content-readable leading-relaxed">
+        We believe that the church is more than just a gathering. It is a community where people are strengthened, encouraged, and transformed. Here, individuals and families can grow spiritually, build meaningful connections, and walk together in faith as one body in Christ.
+      </p>
+
+      <p class="section-body-text content-readable leading-relaxed">
+        Whether you are new to church, returning after some time, or searching for a deeper relationship with God, you are always welcome here. We believe that every person matters, and that God has a purpose for every life.
+      </p>
+
+      <p class="section-body-text content-readable leading-relaxed">
+        As we gather in worship, prayer, and the teaching of the Word, our prayer is that you will be encouraged, renewed, and drawn closer to God. We invite you to join us, be part of this growing family, and experience what God is doing in and through our church.
+      </p>
+
+      <p class="section-body-text content-readable leading-relaxed font-medium text-slate-700">
+        Come as you are, and let us grow together in faith, hope, and love.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION / CORE VALUES -->
+<section id="identity" class="section-shell section-top-fade section-bottom-fade bg-white">
+  <div class="section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">Our Identity</span>
+      <h3 class="section-heading" data-aos="fade-up">Mission, Vision &amp; Core Values</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        The foundation that guides AGHAM Church in worship, discipleship, ministry, and service.
+      </p>
+      <div class="heading-accent-line" data-aos="fade-up"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch mt-10">
+      <!-- Mission -->
+      <div
+        class="bg-white rounded-[28px] border border-blue-100 shadow-[0_14px_34px_rgba(37,99,235,0.08)] p-6 lg:p-8 text-center lg:text-left transition hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(37,99,235,0.14)]"
+        data-aos="fade-up"
+      >
+        <div class="w-[68px] h-[68px] mx-auto lg:mx-0 mb-5 rounded-[22px] flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-50 text-[1.9rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_8px_18px_rgba(37,99,235,0.08)]">
+          🎯
+        </div>
+
+        <span class="inline-block mb-3 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-extrabold uppercase tracking-wide">
+          Mission
+        </span>
+
+        <h4 class="text-[1.35rem] font-extrabold text-slate-900 mb-3 leading-tight">
+          Our Mission
+        </h4>
+
+        <p class="text-slate-600 leading-8 text-[1rem]">
+          To preach the Word of God, make disciples, strengthen families, and reach communities with the Gospel of Jesus Christ.
+        </p>
+      </div>
+
+      <!-- Vision -->
+      <div
+        class="bg-white rounded-[28px] border border-blue-100 shadow-[0_14px_34px_rgba(37,99,235,0.08)] p-6 lg:p-8 text-center lg:text-left transition hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(37,99,235,0.14)]"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="w-[68px] h-[68px] mx-auto lg:mx-0 mb-5 rounded-[22px] flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-50 text-[1.9rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_8px_18px_rgba(37,99,235,0.08)]">
+          ✨
+        </div>
+
+        <span class="inline-block mb-3 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-extrabold uppercase tracking-wide">
+          Vision
+        </span>
+
+        <h4 class="text-[1.35rem] font-extrabold text-slate-900 mb-3 leading-tight">
+          Our Vision
+        </h4>
+
+        <p class="text-slate-600 leading-8 text-[1rem]">
+          To be a Christ-centered church that leads people into a life of worship, spiritual growth, and faithful service to God.
+        </p>
+      </div>
+
+      <!-- Core Values -->
+      <div
+        class="bg-white rounded-[28px] border border-blue-100 shadow-[0_14px_34px_rgba(37,99,235,0.08)] p-6 lg:p-8 text-center lg:text-left transition hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(37,99,235,0.14)]"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="w-[68px] h-[68px] mx-auto lg:mx-0 mb-5 rounded-[22px] flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-50 text-[1.9rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_8px_18px_rgba(37,99,235,0.08)]">
+          💙
+        </div>
+
+        <span class="inline-block mb-3 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-extrabold uppercase tracking-wide">
+          Core Values
+        </span>
+
+        <h4 class="text-[1.35rem] font-extrabold text-slate-900 mb-4 leading-tight">
+          What We Value
+        </h4>
+
+        <div class="grid gap-3 text-left">
+          <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+            <span class="text-blue-600 font-extrabold">•</span>
+            <span class="text-slate-700 leading-7 text-[0.96rem]">Biblical truth and sound doctrine</span>
+          </div>
+
+          <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+            <span class="text-blue-600 font-extrabold">•</span>
+            <span class="text-slate-700 leading-7 text-[0.96rem]">Prayer, worship, and dependence on God</span>
+          </div>
+
+          <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+            <span class="text-blue-600 font-extrabold">•</span>
+            <span class="text-slate-700 leading-7 text-[0.96rem]">Love, unity, and service in the church family</span>
+          </div>
+
+          <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+            <span class="text-blue-600 font-extrabold">•</span>
+            <span class="text-slate-700 leading-7 text-[0.96rem]">Evangelism, discipleship, and community outreach</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services" class="bg-gray-100 section-shell section-top-fade section-bottom-fade">
+  <div class="section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">Worship Schedule</span>
+      <h3 class="section-heading" data-aos="fade-up">Church Services</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        Join our regular worship gatherings and fellowship activities throughout the week and month.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 card-grid-balanced">
+      <div class="card-system card-system-pad card-centered card-soft-slate">
+        <span class="card-badge">Weekly Service</span>
+        <h4 class="card-title-lg">Sunday Worship</h4>
+        <p class="card-meta">9:00 AM</p>
+        <p class="card-description">Come together in praise, worship, and hearing the Word of God every Sunday.</p>
+      </div>
+
+      <div class="card-system card-system-pad card-centered card-soft-slate">
+        <span class="card-badge">Midweek Gathering</span>
+        <h4 class="card-title-lg">Prayer Meeting</h4>
+        <p class="card-meta">7:30 PM</p>
+        <p class="card-description">Seek God in prayer and join the church family in faith-filled intercession.</p>
+      </div>
+
+      <div class="card-system card-system-pad card-centered card-soft-slate">
+        <span class="card-badge">Monthly Fellowship</span>
+        <h4 class="card-title-lg">Overnight Fellowship</h4>
+        <p class="card-meta">Every last Friday of the Month · 9:00 PM</p>
+        <p class="card-description">A special time of fellowship, worship, prayer, and spiritual refreshment through the night.</p>
+      </div>
+
+      <div class="card-system card-system-pad card-centered card-soft-slate">
+        <span class="card-badge">Monthly Gathering</span>
+        <h4 class="card-title-lg">Joint Fellowship</h4>
+        <p class="card-meta">Every first Sunday of the Month</p>
+        <p class="card-description">Join the church family in a united fellowship as we strengthen our bond in Christ together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" class="section-shell px-4 logo-watermark-section section-top-fade section-bottom-fade">
+  <div class="logo-watermark-bg">
+    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
+  </div>
+  <div class="logo-watermark-soft"></div>
+  <div class="logo-watermark-content section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">Join Us</span>
+      <h3 class="section-heading" data-aos="fade-up">Upcoming Events</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        Join our upcoming services, fellowships, and ministry gatherings.
+      </p>
+    </div>
+    <div id="eventsList" class="grid md:grid-cols-2 gap-6"></div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership" class="section-shell leadership-section section-top-fade section-bottom-fade">
+  <div class="section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">Church Leadership</span>
+      <h3 class="section-heading" data-aos="fade-up">Meet Our Leaders</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        Servant-leaders committed to guiding the church in faith, worship, discipleship, and ministry.
+      </p>
+    </div>
+
+    <!-- Opening Remarks -->
+    <div
+      class="leadership-remarks-card"
+      data-aos="fade-up"
+      style="
+        max-width: 900px;
+        margin: 0 auto 56px;
+        padding: 40px 28px;
+        border-radius: 28px;
+        background:
+          radial-gradient(circle at 20% 18%, rgba(191, 167, 111, 0.10) 0%, transparent 22%),
+          radial-gradient(circle at 82% 26%, rgba(160, 120, 70, 0.07) 0%, transparent 20%),
+          radial-gradient(circle at 30% 78%, rgba(184, 155, 110, 0.08) 0%, transparent 24%),
+          linear-gradient(180deg, #fffdf7 0%, #f8f3e8 100%);
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255,255,255,0.72);
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          inset: 0;
+          border-radius: 28px;
+          background:
+            repeating-linear-gradient(
+              0deg,
+              rgba(120, 92, 52, 0.018) 0px,
+              rgba(120, 92, 52, 0.018) 1px,
+              transparent 1px,
+              transparent 7px
+            ),
+            repeating-linear-gradient(
+              90deg,
+              rgba(120, 92, 52, 0.012) 0px,
+              rgba(120, 92, 52, 0.012) 1px,
+              transparent 1px,
+              transparent 9px
+            ),
+            radial-gradient(circle at top left, rgba(179, 137, 74, 0.10), transparent 55%),
+            radial-gradient(circle at center, transparent 60%, rgba(120, 85, 40, 0.18) 100%),
+            radial-gradient(circle at center, transparent 75%, rgba(80, 60, 30, 0.12) 100%);
+          opacity: 0.9;
+          pointer-events: none;
+        "
+      ></div>
+
+      <h4
+        class="leadership-remarks-title"
+        style="font-family: 'Alegreya', serif; margin-top: 24px; margin-bottom: 20px;"
+      >
+        A Message from Our Head Pastor
+      </h4>
+
+      <div
+        class="leadership-remarks-body"
+        style="font-family: 'Alegreya', serif; font-size: 1.12rem; line-height: 1.9; letter-spacing: 0.2px; margin-top: 18px; color:#1f2937;"
+      >
+        <strong style="display:block; margin-bottom:18px;">
+          Beloved brothers and sisters in the Church of Almighty God of Heaven,
+        </strong>
+
+        <p style="margin-bottom:16px;">
+          Grace and peace be multiplied unto you. It is with a heart full of gratitude and humility that I extend this message to each of you. As we gather in faith, whether in spirit or in person, let us remember the divine purpose that unites us and the sacred calling we share.
+        </p>
+
+        <p style="margin-bottom:16px;">
+          In these times, we are constantly reminded of the enduring presence and boundless love of Almighty God. His wisdom guides us, His strength sustains us, and His light illuminates our path forward. Let us continue to seek His divine will in all our endeavors, trusting in His perfect plan for our lives and for His kingdom.
+        </p>
+
+        <p style="margin-bottom:16px;">
+          I encourage each of you to grow deeper in your personal walk with God, to nourish your spirits through prayer and meditation, and to uphold the virtues of love, compassion, and understanding in your daily interactions. Let our lives be a testament to the transformative power of His grace.
+        </p>
+
+        <p style="margin-bottom:16px;">
+          May our community continue to be a beacon of hope, a sanctuary of truth, and a family united by unwavering faith. Let us lift one another up, share in each other's joys and burdens, and always strive to embody the teachings that bring us closer to our Heavenly Father.
+        </p>
+
+        <p style="margin-bottom:16px;">
+          May Almighty God of Heaven bless you abundantly, fill your hearts with His peace, and grant you renewed strength and purpose.
+        </p>
+
+        <div style="margin-top:26px;">
+          <p style="font-style: italic; margin-bottom:12px;">
+            In His unfailing love,
+          </p>
+
+          <p style="font-weight:700; margin-bottom:2px;">
+            Ptr. Amador Acebuche
+          </p>
+
+          <p style="color:#2563eb; font-weight:600;">
+            Head Pastor
+          </p>
+
+          <p style="font-size:0.95rem; color:#64748b; margin-top:4px;">
+            Church of Almighty God of Heaven Apostolic Ministry, Inc.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESKTOP PYRAMID FINAL -->
+<div class="leadership-desktop">
+  <div class="leadership-desktop-inner">
+    <!-- Top Row -->
+    <div style="display:flex; justify-content:center; margin-bottom:38px;">
+      <div
+        data-aos="fade-up"
+        style="
+          width:340px;
+          background:#ffffff;
+          border:2px solid rgba(96,165,250,0.65);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 24px 48px rgba(37,99,235,0.16);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/NbeBMT1.png"
+            alt="Ptr. Amador Acebuche"
+            loading="lazy"
+            decoding="async"
+            style="display:block; width:100%; height:420px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.08rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Ptr. Amador Acebuche
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.95rem; line-height:1.6; font-weight:600;">
+            Head Pastor / President
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row -->
+    <div style="display:flex; justify-content:center; gap:28px; margin-bottom:28px;">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="50"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/NU7sUL0.png"
+            alt="Ptr. Rechie Escaros"
+            loading="lazy"
+            decoding="async"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Ptr. Rechie Escaros
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Assistant to the Head Pastor / Board Vice President
+          </p>
+        </div>
+      </div>
+
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/1BtHCyd.png"
+            alt="Ptr. Rodolfo Fidelson"
+            loading="lazy"
+            decoding="async"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Ptr. Rodolfo Fidelson
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Pastor
+          </p>
+        </div>
+      </div>
+
+      <div
+        data-aos="fade-up"
+        data-aos-delay="150"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/MgoJhhM.png"
+            alt="Ptr. Cesar Pajardo"
+            loading="lazy"
+            decoding="async"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Ptr. Cesar Pajardo
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Pastor
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Row -->
+    <div style="display:flex; justify-content:center; gap:28px;">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="50"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/U2omQr5.png"
+            alt="Minister Venus Acebuche"
+            loading="lazy"
+            decoding="async"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Minister Venus Acebuche
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Evangelism
+          </p>
+        </div>
+      </div>
+
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/nhKKCnG.png"
+            alt="Sis. Jan Ceiyrell Escaros"
+            loading="lazy"
+            decoding="async"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Sis. Jan Ceiyrell Escaros
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Board Secretary
+          </p>
+        </div>
+      </div>
+
+      <div
+        data-aos="fade-up"
+        data-aos-delay="150"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/cMxhq25.png"
+            alt="Sis. Maria Paz Acebuche"
+            loading="lazy"
+            decoding="async"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Sis. Maria Paz Acebuche
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Board Treasurer
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Layout -->
+<div class="leadership-mobile" style="display:none;">
+  <div class="leader-mobile-featured" data-aos="fade-up">
+    <img
+      src="https://i.imgur.com/NbeBMT1.png"
+      alt="Ptr. Amador Acebuche"
+      class="leader-mobile-featured-image"
+      loading="lazy"
+      decoding="async"
+    >
+    <div class="leader-mobile-featured-info">
+      <h4 class="leader-mobile-featured-name">Ptr. Amador Acebuche</h4>
+      <p class="leader-mobile-featured-role">Head Pastor / President</p>
+    </div>
+  </div>
+
+  <div class="leader-mobile-grid">
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img
+        src="https://i.imgur.com/NU7sUL0.png"
+        alt="Ptr. Rechie Escaros"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Ptr. Rechie Escaros</h4>
+        <p class="leader-role">Assistant to the Head Pastor / Board Vice President</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img
+        src="https://i.imgur.com/1BtHCyd.png"
+        alt="Ptr. Rodolfo Fidelson"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Ptr. Rodolfo Fidelson</h4>
+        <p class="leader-role">Pastor</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img
+        src="https://i.imgur.com/MgoJhhM.png"
+        alt="Ptr. Cesar Pajardo"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Ptr. Cesar Pajardo</h4>
+        <p class="leader-role">Pastor</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img
+        src="https://i.imgur.com/U2omQr5.png"
+        alt="Minister Venus Acebuche"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Minister Venus Acebuche</h4>
+        <p class="leader-role">Evangelism</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img
+        src="https://i.imgur.com/nhKKCnG.png"
+        alt="Sis. Jan Ceiyrell Escaros"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Sis. Jan Ceiyrell Escaros</h4>
+        <p class="leader-role">Board Secretary</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img
+        src="https://i.imgur.com/cMxhq25.png"
+        alt="Sis. Maria Paz Acebuche"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Sis. Maria Paz Acebuche</h4>
+        <p class="leader-role">Board Treasurer</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="bg-gray-100 section-shell section-top-fade section-bottom-fade">
+  <div class="section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">Captured Moments</span>
+      <h3 class="section-heading" data-aos="fade-up">Church Gallery</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        Moments of worship, fellowship, and ministry life in AGHAM Family.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="https://i.imgur.com/UsCK7K2.jpeg" alt="AGHAM Church gallery photo 1" class="gallery-img rounded-2xl shadow-lg hover:scale-[1.03] transition duration-300 cursor-pointer">
+      <img src="https://i.imgur.com/7DpT7Ho.jpeg" alt="AGHAM Church gallery photo 2" class="gallery-img rounded-2xl shadow-lg hover:scale-[1.03] transition duration-300 cursor-pointer">
+      <img src="https://i.imgur.com/DrI7T5O.jpeg" alt="AGHAM Church gallery photo 3" class="gallery-img rounded-2xl shadow-lg hover:scale-[1.03] transition duration-300 cursor-pointer">
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightbox-img" alt="Expanded gallery image">
+</div>
+
+<!-- PRAYER -->
+<section id="prayer" class="section-shell text-center logo-watermark-section section-top-fade section-bottom-fade">
+  <div class="logo-watermark-bg">
+    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
+  </div>
+  <div class="logo-watermark-soft"></div>
+  <div class="logo-watermark-content section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">We Pray With You</span>
+      <h3 class="section-heading" data-aos="fade-up">Prayer Request</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        Share your prayer concerns with us and let us stand with you in faith.
+      </p>
+    </div>
+
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfDwFec-UhJezQ9EUuqAMCfEMJvqQRIjNoGel1Z3xL0Kac3EQ/viewform?embedded=true"
+      width="100%"
+      height="800"
+      class="rounded-2xl bg-white shadow-lg"
+    ></iframe>
+  </div>
+</section>
+
+<!-- GIVING -->
+<section id="giving" class="section-shell bg-gray-100 text-center section-top-fade section-bottom-fade">
+  <style>
+    .giving-card {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 30px 24px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #ffffff, #eff6ff);
+  box-shadow: 0 16px 38px rgba(37, 99, 235, 0.14);
+  border: 1px solid rgba(147, 197, 253, 0.38);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+    .giving-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.18);
+    }
+
+    .giving-card-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+    .giving-field {
+      text-align: left;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #dbeafe;
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .giving-field:hover {
+      transform: translateX(6px);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.08);
+    }
+
+    .giving-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .giving-value {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1f2937;
+      word-break: break-word;
+      margin-bottom: 10px;
+    }
+
+    .giving-copy-btn {
+      border: none;
+      background: linear-gradient(to right, #2563eb, #60a5fa);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    }
+
+    .giving-copy-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
+    }
+
+    .giving-copy-btn:active {
+      transform: scale(0.96);
+    }
+
+    @media (max-width: 640px) {
+      .giving-card {
+        padding: 20px 16px;
+        border-radius: 20px;
+      }
+
+      .giving-card-title {
+        font-size: 1.4rem;
+      }
+
+      .giving-copy-btn {
+        width: 100%;
+      }
+
+.giving-card-subtitle {
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+  </style>
+
+  <div class="giving-card">
+    <h3 class="giving-card-title">Support the Ministry</h3>
+<p class="giving-card-subtitle">
+  Your generosity helps support the mission, ministry work, and outreach Program of AGHAM CHURCH.
+</p>
+
+    <div class="giving-field">
+  <span class="giving-label">Bank</span>
+  <span class="giving-value">Banco De Oro (BDO)</span>
+</div>
+
+    <div class="giving-field">
+      <span class="giving-label">Account Name</span>
+      <span class="giving-value" id="aghamAccountName">Almighty God of Heaven Apostolic Ministry Incorporated</span>
+      <button class="giving-copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('aghamAccountName').innerText).then(() => this.innerText='✅ Copied!'); setTimeout(() => this.innerText='📋 Copy Account Name', 1500);">
+        📋 Copy Account Name
+      </button>
+    </div>
+
+    <div class="giving-field">
+      <span class="giving-label">Account Number</span>
+      <span class="giving-value" id="aghamAccountNumber">012380118953</span>
+      <button class="giving-copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('aghamAccountNumber').innerText).then(() => this.innerText='✅ Copied!'); setTimeout(() => this.innerText='📋 Copy Account Number', 1500);">
+        📋 Copy Account Number
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-gray-100 section-shell section-top-fade">
+  <div class="section-container text-center">
+    <span class="section-kicker" data-aos="fade-up">Reach Out</span>
+    <h3 class="section-heading" data-aos="fade-up">Contact Us</h3>
+    <p class="section-subtitle mb-10" data-aos="fade-up">
+      We would love to hear from you and help you connect with AGHAM CHURCH.
+    </p>
+
+    <div class="max-w-3xl mx-auto bg-white rounded-[28px] shadow-[0_16px_40px_rgba(15,23,42,0.08)] border border-blue-100 p-6 md:p-8 space-y-5">
+
+  <!-- Contact Info -->
+  <div class="space-y-3 text-gray-600 text-sm md:text-base">
+
+    <p class="flex items-center justify-center gap-2">
+      <span class="text-lg">📍</span>
+      Blk 21-R Lot 4, Carissa Homes East 1 Bagumbayan, Teresa, Philippines, 1880
+    </p>
+
+    <p class="flex items-center justify-center gap-2">
+      <span class="text-lg">📞</span>
+      0938-8484-568
+    </p>
+
+    <p class="flex items-center justify-center gap-2">
+      <span class="text-lg">📧</span>
+      agham.inc.ph@gmail.com
+    </p>
+
+  </div>
+
+  <!-- Divider -->
+  <div class="h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
+
+  <!-- Signature -->
+  <div class="text-center mt-4">
+    <span class="text-3xl md:text-4xl lg:text-5xl text-slate-700 leading-tight" style="font-family: 'Great Vibes', cursive;">
+      To
+    </span>
+
+    <span class="text-4xl md:text-5xl lg:text-6xl text-red-600 leading-tight inline-block mx-2 tracking-wide" style="font-family: 'Alegreya', serif; font-weight: 700;">
+      JESUS
+    </span>
+
+    <span class="text-3xl md:text-4xl lg:text-5xl text-slate-700 leading-tight" style="font-family: 'Great Vibes', cursive;">
+      be the Glory
+    </span>
+  </div>
+
+</div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-gray-950 text-white pt-16 pb-6 section-top-fade">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-10 md:gap-12 text-center md:text-left">
+
+      <!-- Brand -->
+      <div>
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-4 justify-center md:justify-start">
+          <img src="https://i.imgur.com/EsoHkMb.png"
+               class="w-16 h-16 rounded-full shadow-[0_10px_30px_rgba(37,99,235,0.22)] border border-white/10"
+               alt="AGHAM Church Logo">
+          <div>
+            <h2 class="text-xl font-extrabold tracking-tight text-white">AGHAM CHURCH</h2>
+            <p class="text-sm text-blue-300 font-medium">Apostolic Ministry</p>
+          </div>
+        </div>
+
+        <p class="text-sm leading-7 text-gray-400 mt-5 max-w-md mx-auto md:mx-0">
+          Almighty God of Heaven Apostolic Ministry is dedicated to spreading the Gospel,
+          making disciples, and building a strong faith community centered on Christ.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-base font-bold text-white mb-4">Quick Links</h3>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="#about" class="hover:text-blue-400 transition duration-300">About</a></li>
+          <li><a href="#services" class="hover:text-blue-400 transition duration-300">Services</a></li>
+          <li><a href="#events" class="hover:text-blue-400 transition duration-300">Events</a></li>
+          <li><a href="#prayer" class="hover:text-blue-400 transition duration-300">Prayer</a></li>
+          <li><a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-base font-bold text-white mb-4">Contact</h3>
+
+        <div class="space-y-2.5 text-sm text-gray-400">
+          <p>📍 Teresa, Rizal</p>
+          <p>📞 0938-8484-568</p>
+          <p>📧 agham.inc.ph@gmail.com</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center md:justify-start gap-3 text-sm mt-6 mb-3">
+          <a href="https://www.facebook.com/aghamincph"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-blue-900 font-semibold border border-white shadow-md hover:scale-[1.03] hover:bg-blue-50 transition duration-300">
+            <span>Facebook</span>
+          </a>
+
+          <a href="#home"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 text-white font-medium border border-white/15 hover:bg-white/15 transition duration-300">
+            <span>Back to Top</span>
+          </a>
+        </div>
+
+        <div class="flex justify-center md:justify-start mt-2">
+          <a href="#prayer"
+             class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 text-white text-sm font-semibold shadow-[0_10px_24px_rgba(37,99,235,0.28)] hover:scale-[1.03] transition duration-300">
+            Prayer Request
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center text-xs text-gray-500 mt-12 pt-5 border-t border-white/10">
+      © 2026 AGHAM - Almighty God of Heaven Apostolic Ministry. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+function setMenuState(isOpen) {
+  const menu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("mobileOverlay");
+
+  if (isOpen) {
+    menu.classList.remove("translate-x-full");
+    overlay.classList.remove("hidden");
+    document.body.classList.add("menu-open");
+  } else {
+    menu.classList.add("translate-x-full");
+    overlay.classList.add("hidden");
+    document.body.classList.remove("menu-open");
+  }
+}
+
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  const isClosed = menu.classList.contains("translate-x-full");
+  setMenuState(isClosed);
+}
+
+window.addEventListener("scroll", () => {
+  const nav = document.getElementById("navContent");
+  if (!nav) return;
+  window.scrollY > 50 ? nav.classList.add("shrink") : nav.classList.remove("shrink");
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    setMenuState(false);
+    closeLightbox();
+  }
+});
+
+/* LIGHTBOX */
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxClose = document.getElementById("lightboxClose");
+
+function openLightbox(src, alt = "Expanded image") {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = alt;
+  lightbox.style.display = "flex";
+  document.body.classList.add("menu-open");
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.style.display = "none";
+  lightboxImg.src = "";
+  document.body.classList.remove("menu-open");
+}
+
+document.querySelectorAll(".gallery-img").forEach((img, index) => {
+  img.addEventListener("click", () => {
+    openLightbox(img.src, img.alt || `Gallery image ${index + 1}`);
+  });
+});
+
+if (lightbox) {
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target === lightboxClose) {
+      closeLightbox();
+    }
+  });
+}
+
+/* MOBILE SWIPE */
+const mobileMenu = document.getElementById("mobileMenu");
+let startX = 0;
+let currentX = 0;
+let isSwiping = false;
+
+mobileMenu.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  currentX = startX;
+  isSwiping = true;
+}, { passive: true });
+
+mobileMenu.addEventListener("touchmove", (e) => {
+  if (!isSwiping) return;
+
+  currentX = e.touches[0].clientX;
+  const diffX = currentX - startX;
+
+  if (diffX > 0) {
+    mobileMenu.style.transform = `translateX(${diffX}px)`;
+  }
+}, { passive: true });
+
+mobileMenu.addEventListener("touchend", () => {
+  if (!isSwiping) return;
+
+  const diffX = currentX - startX;
+  mobileMenu.style.transform = "";
+
+  if (diffX > 80 && !mobileMenu.classList.contains("translate-x-full")) {
+    setMenuState(false);
+  }
+
+  startX = 0;
+  currentX = 0;
+  isSwiping = false;
+});
+
+/* CSV PARSER */
+function parseCSVLine(line) {
+  const result = [];
+  let current = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    const nextChar = line[i + 1];
+
+    if (char === '"' && inQuotes && nextChar === '"') {
+      current += '"';
+      i++;
+    } else if (char === '"') {
+      inQuotes = !inQuotes;
+    } else if (char === ',' && !inQuotes) {
+      result.push(current.trim());
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+
+  result.push(current.trim());
+  return result.map(cell => cell.replace(/^"|"$/g, "").trim());
+}
+
+function isValidHttpLink(url) {
+  return /^https?:\/\/.+/i.test(url || "");
+}
+
+function createTextElement(tag, text, className = "") {
+  const el = document.createElement(tag);
+  el.textContent = text;
+  if (className) el.className = className;
+  return el;
+}
+
+function renderLoadingCards(container, count, classes = "") {
+  container.innerHTML = "";
+  for (let i = 0; i < count; i++) {
+    const card = document.createElement("div");
+    card.className = `loading-card ${classes}`;
+    container.appendChild(card);
+  }
+}
+
+function renderEmptyMessage(container, message, className = "") {
+  container.innerHTML = "";
+  const msg = document.createElement("p");
+  msg.className = className;
+  msg.textContent = message;
+  container.appendChild(msg);
+}
+
+function createDataCard({
+  title,
+  details,
+  link,
+  wrapperClass,
+  titleClass,
+  detailsClass,
+  clickableBgClass,
+  badgeText = "",
+  showLinkIndicator = true
+}) {
+  const hasValidLink = isValidHttpLink(link);
+  const card = document.createElement(hasValidLink ? "a" : "div");
+
+  if (hasValidLink) {
+    card.href = link;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+  }
+
+  card.className = `${wrapperClass} ${clickableBgClass} transition block`;
+
+  if (badgeText) {
+    const badgeEl = createTextElement("span", badgeText, "card-badge");
+    card.appendChild(badgeEl);
+  }
+
+  const titleEl = createTextElement("h4", title, titleClass);
+  const detailsEl = createTextElement("p", details, detailsClass);
+
+  card.appendChild(titleEl);
+  card.appendChild(detailsEl);
+
+  if (hasValidLink && showLinkIndicator) {
+    const linkIndicator = createTextElement("div", "Read more", "card-link-indicator");
+    card.appendChild(linkIndicator);
+  }
+
+  return card;
+}
+
+const SHEET_ID = "1VqSpUe-5o0Px0UPyvqkG_DvayjwWluLU3KRyV7r75ME";
+const ANNOUNCEMENTS_GID = "0";
+const EVENTS_GID = "1375025455";
+
+const announcementsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${ANNOUNCEMENTS_GID}`;
+const eventsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${EVENTS_GID}`;
+
+const announcementsList = document.getElementById("announcementsList");
+const eventsList = document.getElementById("eventsList");
+
+if (announcementsList) {
+  renderLoadingCards(announcementsList, 3, "min-h-[130px]");
+}
+
+if (eventsList) {
+  renderLoadingCards(eventsList, 2, "min-h-[140px]");
+}
+
+/* ANNOUNCEMENTS */
+fetch(announcementsCsvUrl)
+  .then(response => response.text())
+  .then(csv => {
+    announcementsList.innerHTML = "";
+
+    const rows = csv.trim().split("\n").map(row =>
+      parseCSVLine(row.replace(/\r/g, ""))
+    );
+
+    let validCount = 0;
+
+    rows.forEach(row => {
+      const title = row[0] || "";
+      const details = row[1] || "";
+      const link = row[2] || "";
+
+      if (!title) return;
+      validCount++;
+
+      const card = createDataCard({
+  title,
+  details,
+  link,
+  wrapperClass: "card-system card-system-pad card-soft-blue text-gray-800 slide-right",
+  titleClass: "card-title-md",
+  detailsClass: "card-description",
+  clickableBgClass: "",
+badgeText: "Announcement",
+showLinkIndicator: true
+});
+
+      announcementsList.appendChild(card);
+    });
+
+    if (!validCount) {
+      renderEmptyMessage(
+        announcementsList,
+        "No announcements available right now.",
+        "text-white text-center md:col-span-3"
+      );
+    }
+  })
+  .catch(error => {
+    console.error("Announcements CSV load error:", error);
+    renderEmptyMessage(
+      announcementsList,
+      "Unable to load announcements right now.",
+      "text-white text-center md:col-span-3"
+    );
+  });
+
+/* EVENTS */
+fetch(eventsCsvUrl)
+  .then(response => response.text())
+  .then(csv => {
+    eventsList.innerHTML = "";
+
+    const rows = csv.trim().split("\n").map(row =>
+      parseCSVLine(row.replace(/\r/g, ""))
+    );
+
+    let validCount = 0;
+
+    rows.forEach(row => {
+      const title = row[0] || "";
+      const details = row[1] || "";
+      const link = row[2] || "";
+
+      if (!title) return;
+      validCount++;
+
+      const card = createDataCard({
+  title,
+  details,
+  link,
+  wrapperClass: "card-system card-system-pad card-soft-highlight",
+  titleClass: "card-title-lg",
+  detailsClass: "card-description",
+  clickableBgClass: "",
+  badgeText: "Upcoming Event",
+  showLinkIndicator: true
+});
+
+      eventsList.appendChild(card);
+    });
+
+    if (!validCount) {
+      renderEmptyMessage(
+        eventsList,
+        "No events found yet.",
+        "text-center text-red-500 md:col-span-2"
+      );
+    }
+  })
+  .catch(error => {
+    console.error("Events CSV load error:", error);
+    renderEmptyMessage(
+      eventsList,
+      "Unable to load events right now.",
+      "text-center text-red-500 md:col-span-2"
+    );
+  });
+
+/* DAILY VERSE */
+(function () {
+  const verseTextEl = document.getElementById("aghamVerseText");
+  const verseReferenceEl = document.getElementById("aghamVerseReference");
+  const verseThoughtEl = document.getElementById("aghamVerseThought");
+  const refreshBtn = document.getElementById("aghamRefreshVerseBtn");
+
+  if (!verseTextEl || !verseReferenceEl || !verseThoughtEl) return;
+
+  const translation = "web";
+
+  const versePool = [
+    "John 3:16",
+    "Psalm 23:1",
+    "Philippians 4:13",
+    "Proverbs 3:5-6",
+    "Jeremiah 29:11",
+    "Isaiah 41:10",
+    "Romans 8:28",
+    "Matthew 11:28",
+    "Joshua 1:9",
+    "Psalm 46:1",
+    "Lamentations 3:22-23",
+    "2 Corinthians 5:7",
+    "Hebrews 11:1",
+    "1 Peter 5:7",
+    "Psalm 34:8",
+    "Colossians 3:23",
+    "Romans 12:12",
+    "Psalm 121:1-2",
+    "James 1:5",
+    "Galatians 6:9",
+    "Micah 6:8",
+    "Psalm 27:1",
+    "John 14:27",
+    "Deuteronomy 31:6",
+    "Psalm 91:1-2",
+    "Romans 15:13",
+    "Ephesians 2:8",
+    "Hebrews 13:8",
+    "Psalm 119:105",
+    "Matthew 6:33",
+    "Isaiah 40:31"
+  ];
+
+  const fallbackThoughts = [
+    "God's Word reminds us that His promises remain true in every season of life.",
+    "Let this verse encourage your heart and guide your walk with the Lord today.",
+    "Even in uncertainty, the Lord speaks peace, strength, and direction to His people.",
+    "Take this message into prayer and allow God to refresh your spirit today.",
+    "May this Scripture draw you closer to the love, wisdom, and grace of God.",
+    "The Lord's Word is living and powerful—carry it with faith throughout your day.",
+    "May today's verse become a source of hope and courage in whatever you are facing."
+  ];
+
+  function getTodayKey() {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, "0");
+    const d = String(now.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+  }
+
+  function showVerse(verse, reference, thought) {
+    verseTextEl.textContent = `"${verse}"`;
+    verseReferenceEl.textContent = reference;
+    verseThoughtEl.textContent = thought;
+  }
+
+  function getThought(reference, verse) {
+    const combined = `${reference} ${verse}`.toLowerCase();
+
+    if (combined.includes("love")) {
+      return "God's love is the foundation of our faith and the reason we can live with hope.";
+    }
+    if (combined.includes("peace")) {
+      return "May the peace of God calm your heart and lead your thoughts today.";
+    }
+    if (combined.includes("strength")) {
+      return "Whatever burden you carry today, remember that God's strength is sufficient for you.";
+    }
+    if (combined.includes("trust")) {
+      return "Trusting God means believing that His way is good even when we do not yet see the whole path.";
+    }
+    if (combined.includes("fear") || combined.includes("afraid")) {
+      return "The Lord is calling you to stand in faith, not in fear, because He is with you.";
+    }
+    if (combined.includes("pray") || combined.includes("prayer")) {
+      return "God hears every sincere prayer—come before Him with faith and confidence.";
+    }
+
+    const index = Math.abs((reference + verse).length) % fallbackThoughts.length;
+    return fallbackThoughts[index];
+  }
+
+  function saveVerseForToday(payload) {
+    try {
+      localStorage.setItem("aghamDailyVerse", JSON.stringify(payload));
+    } catch (err) {
+      console.warn("Could not save verse to localStorage:", err);
+    }
+  }
+
+  function loadSavedVerseForToday() {
+    try {
+      const raw = localStorage.getItem("aghamDailyVerse");
+      if (!raw) return null;
+
+      const data = JSON.parse(raw);
+      if (data.dateKey === getTodayKey()) {
+        return data;
+      }
+      return null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function setButtonState(isLoading) {
+    if (!refreshBtn) return;
+    refreshBtn.disabled = isLoading;
+    refreshBtn.textContent = isLoading ? "Loading..." : "Get Another Verse";
+  }
+
+  async function fetchVerse(forceRefresh) {
+    try {
+      setButtonState(true);
+
+      if (!forceRefresh) {
+        const saved = loadSavedVerseForToday();
+        if (saved && saved.verse && saved.reference) {
+          showVerse(saved.verse, saved.reference, saved.thought || "");
+          setButtonState(false);
+          return;
+        }
+      }
+
+      const dateSeed = new Date().getFullYear() + "-" + getTodayKey();
+      let seedValue = 0;
+      for (let i = 0; i < dateSeed.length; i++) {
+        seedValue += dateSeed.charCodeAt(i);
+      }
+
+      const baseIndex = seedValue % versePool.length;
+      const chosenReference = forceRefresh
+        ? versePool[Math.floor(Math.random() * versePool.length)]
+        : versePool[baseIndex];
+
+      const endpoint = `https://bible-api.com/${encodeURIComponent(chosenReference)}?translation=${translation}`;
+      const response = await fetch(endpoint);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch verse from API");
+      }
+
+      const data = await response.json();
+
+      if (!data || !data.text) {
+        throw new Error("Invalid verse response");
+      }
+
+      const cleanVerse = data.text.replace(/\s+/g, " ").trim();
+      const cleanReference = (data.reference || chosenReference).trim();
+      const thought = getThought(cleanReference, cleanVerse);
+
+      showVerse(cleanVerse, cleanReference, thought);
+
+      if (!forceRefresh) {
+        saveVerseForToday({
+          dateKey: getTodayKey(),
+          verse: cleanVerse,
+          reference: cleanReference,
+          thought: thought
+        });
+      }
+    } catch (error) {
+      console.error("AGHAM Daily Verse Error:", error);
+      verseTextEl.textContent = "Unable to load today's verse right now. Please try again later.";
+      verseReferenceEl.textContent = "";
+      verseThoughtEl.textContent = "God's Word remains true and faithful every day.";
+    } finally {
+      setButtonState(false);
+    }
+  }
+
+  if (refreshBtn) {
+    refreshBtn.addEventListener("click", function () {
+      fetchVerse(true);
+    });
+  }
+
+  fetchVerse(false);
+})();
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
+</script>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", function () {
+    if (document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto"
+    });
+  }
+</script>
+
+<a href="https://m.me/aghamincph"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="
+     position: fixed;
+     bottom: 90px;
+     right: 20px;
+     width: 60px;
+     height: 60px;
+     background: #0084ff;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0 10px 25px rgba(0,132,255,0.4);
+     z-index: 9999;
+     text-decoration: none;
+   ">
+  <img src="https://img.icons8.com/ios-filled/100/ffffff/facebook-messenger.png"
+       alt="Messenger"
+       style="width:28px; height:28px; display:block;">
+</a>
+
+</body>
+</html>
