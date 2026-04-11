@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services & Events | AGHAM Church</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 50%, #f8fafc 100%);
+  color: #0f172a;
+}
+
+.section-shell {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.section-container {
+  width: min(1120px, calc(100% - 24px));
+  margin-inline: auto;
+}
+
+/* HERO GLOW */
+.hero-soft-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-soft-glow::before,
+.hero-soft-glow::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.4;
+}
+
+.hero-soft-glow::before {
+  width: 300px;
+  height: 300px;
+  background: rgba(59,130,246,0.18);
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero-soft-glow::after {
+  width: 240px;
+  height: 240px;
+  background: rgba(14,165,233,0.16);
+  bottom: 20px;
+  right: 5%;
+}
+
+/* FOOTER */
+.footer-card {
+  border-radius: 24px;
+  background: #0f172a;
+  color: white;
+  padding: 24px 28px;
+  box-shadow: 0 12px 30px rgba(15,23,42,0.16);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="section-shell relative text-center overflow-hidden">
+  <div class="hero-soft-glow"></div>
+
+  <div class="section-container relative z-10">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900" data-aos="fade-up">
+      Worship & Church Life
+    </h1>
+
+    <p class="mt-4 max-w-2xl mx-auto text-slate-600" data-aos="fade-up" data-aos-delay="100">
+      Discover our regular worship schedule and upcoming events where we gather, grow, and serve together as a church family.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-white/70 backdrop-blur-md section-shell px-4 rounded-[32px] mx-4">
+  <div class="section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">Worship Schedule</span>
+      <h3 class="section-heading" data-aos="fade-up">Church Services</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        Join our regular worship gatherings and fellowship activities throughout the week and month.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 card-grid-balanced">
+      <div class="card-system card-system-pad card-centered card-soft-slate">
+        <span class="card-badge">Weekly Service</span>
+        <h4 class="card-title-lg">Sunday Worship</h4>
+        <p class="card-meta">9:00 AM</p>
+        <p class="card-description">Come together in praise, worship, and hearing the Word of God every Sunday.</p>
+      </div>
+
+      <div class="card-system card-system-pad card-centered card-soft-slate">
+        <span class="card-badge">Midweek Gathering</span>
+        <h4 class="card-title-lg">Prayer Meeting</h4>
+        <p class="card-meta">7:30 PM</p>
+        <p class="card-description">Seek God in prayer and join the church family in faith-filled intercession.</p>
+      </div>
+
+      <div class="card-system card-system-pad card-centered card-soft-slate">
+        <span class="card-badge">Monthly Fellowship</span>
+        <h4 class="card-title-lg">Overnight Fellowship</h4>
+        <p class="card-meta">Every last Friday of the Month · 9:00 PM</p>
+        <p class="card-description">A special time of fellowship, worship, prayer, and spiritual refreshment through the night.</p>
+      </div>
+
+      <div class="card-system card-system-pad card-centered card-soft-slate">
+        <span class="card-badge">Monthly Gathering</span>
+        <h4 class="card-title-lg">Joint Fellowship</h4>
+        <p class="card-meta">Every first Sunday of the Month</p>
+        <p class="card-description">Join the church family in a united fellowship as we strengthen our bond in Christ together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" class="section-shell px-4 pt-10">
+  <div class="section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">Join Us</span>
+      <h3 class="section-heading" data-aos="fade-up">Upcoming Events</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        Join our upcoming services, fellowships, and ministry gatherings.
+      </p>
+    </div>
+
+    <div id="eventsList" class="grid md:grid-cols-2 gap-6"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="px-4 pb-10">
+  <div class="max-w-4xl mx-auto">
+    <div class="footer-card flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      
+      <div>
+        <h3 class="text-lg md:text-xl font-bold">See You at AGHAM Church</h3>
+        <p class="text-sm text-slate-300 mt-1">
+          Join us in worship, fellowship, and growing in faith.
+        </p>
+      </div>
+
+      <a href="index.html"
+         class="px-5 py-2.5 rounded-full bg-white text-blue-800 text-sm font-semibold shadow hover:scale-[1.03] transition">
+        ← Back to Home
+      </a>
+
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 900,
+  once: true
+});
+</script>
+
+</body>
+</html>
