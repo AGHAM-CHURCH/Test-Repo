@@ -1635,16 +1635,13 @@ section[id] {
   <a href="#" class="hover:text-blue-600 transition">Home</a>
   <a href="#about" class="hover:text-blue-600 transition">About</a>
   <a href="#identity" class="hover:text-blue-600 transition">Mission</a>
-
   <a href="services.html#services" class="hover:text-blue-600 transition">Services</a>
-  <a href="services.html#events" class="hover:text-blue-600 transition">Events</a>
-
-  <a href="leadership.html" class="hover:text-blue-500 transition">Leadership</a>
-
-  <!-- ✅ FIXED -->
-  <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
-  <a href="prayer.html" class="hover:text-blue-600 transition">Prayer</a>
-
+<a href="services.html#events" class="hover:text-blue-600 transition">Events</a>
+<a href="leadership.html" class="hover:text-blue-500 transition">
+  Leadership
+</a>
+  <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
+  <a href="prayer.html">Prayer</a>
   <a href="#giving" class="hover:text-blue-600 transition">Giving</a>
   <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
 </nav>
@@ -1657,8 +1654,6 @@ section[id] {
 <div id="mobileOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"></div>
 
 <!-- MOBILE SIDE MENU -->
-<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 text-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y">
-  <!-- MOBILE SIDE MENU -->
 <div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 text-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y">
   <div class="flex justify-between items-center p-5 border-b border-white/20">
     <div class="flex items-center gap-3">
@@ -1701,13 +1696,13 @@ section[id] {
       <span>👥</span><span>Leadership</span>
     </a>
 
-    <!-- ✅ FIXED LINKS -->
-    <a href="gallery.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>🖼️</span><span>Gallery</span>
-    </a>
-
+    <!-- ✅ FIXED PRAYER LINK -->
     <a href="prayer.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
       <span>🙏</span><span>Prayer</span>
+    </a>
+
+    <a href="#gallery" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🖼️</span><span>Gallery</span>
     </a>
 
     <a href="#giving" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
