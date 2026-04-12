@@ -1,148 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | AGHAM Church</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | AGHAM Church</title>
+  <meta name="description" content="Church Services and Upcoming Events of AGHAM Church." />
+  <meta name="theme-color" content="#2563eb" />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-<style>
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f8fafc;
-}
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-.section-container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 16px;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background: #f8fafc;
+      color: #0f172a;
+      margin: 0;
+    }
 
-.card {
-  border-radius: 24px;
-  background: white;
-  padding: 24px;
-  border: 1px solid rgba(226,232,240,0.9);
-  box-shadow: 0 10px 30px rgba(15,23,42,0.08);
-  transition: 0.3s;
-}
+    .section-shell {
+      position: relative;
+      padding-top: 92px;
+      padding-bottom: 92px;
+    }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(15,23,42,0.12);
-}
-</style>
+    .section-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      color: #64748b;
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .stack-heading {
+      margin-bottom: 48px;
+    }
+
+    .card-system {
+      border-radius: 24px;
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card-system:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      border-color: rgba(147, 197, 253, 0.9);
+    }
+
+    .card-system-pad {
+      padding: 28px 24px;
+    }
+
+    .card-centered {
+      text-align: center;
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .card-title-lg {
+      font-size: 1.22rem;
+      line-height: 1.35;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .card-meta {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      color: #475569;
+      font-size: 0.97rem;
+      line-height: 1.75;
+    }
+
+    .card-link-indicator {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #2563eb;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .card-link-indicator::after {
+      content: "→";
+      transition: transform 0.25s ease;
+    }
+
+    a.card-system:hover .card-link-indicator::after {
+      transform: translateX(4px);
+    }
+
+    .card-soft-slate {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .card-soft-highlight {
+      background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+    }
+
+    .card-grid-balanced {
+      align-items: stretch;
+    }
+
+    .card-grid-balanced > * {
+      height: 100%;
+    }
+
+    .logo-watermark-section {
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .logo-watermark-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .logo-watermark-bg img {
+      width: min(420px, 62vw);
+      max-width: 420px;
+      opacity: 0.07;
+      filter: blur(3px) grayscale(10%);
+      transform: scale(1.06);
+      user-select: none;
+    }
+
+    .logo-watermark-soft {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.92),
+        rgba(255,255,255,0.84),
+        rgba(255,255,255,0.92)
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .logo-watermark-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-top-fade::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(148,163,184,0.28), transparent);
+    }
+
+    .section-bottom-fade::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(148,163,184,0.22), transparent);
+    }
+
+    section[id] {
+      scroll-margin-top: 110px;
+    }
+
+    .loading-card {
+      min-height: 140px;
+      border-radius: 24px;
+      background: linear-gradient(90deg, #eff6ff 25%, #dbeafe 50%, #eff6ff 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.2s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    @media (max-width: 768px) {
+      .section-shell {
+        padding-top: 64px;
+        padding-bottom: 64px;
+      }
+
+      .stack-heading {
+        margin-bottom: 36px;
+      }
+
+      .section-subtitle {
+        font-size: 0.96rem;
+        line-height: 1.7;
+      }
+
+      .logo-watermark-bg img {
+        width: min(250px, 65vw);
+        opacity: 0.06;
+        filter: blur(2px);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="pt-28 pb-16 text-center">
-  <div class="section-container">
-    <h1 class="text-3xl md:text-4xl font-extrabold">Services & Events</h1>
-    <p class="text-gray-600 mt-3">Join us in worship and fellowship.</p>
-  </div>
-</section>
+  <main class="page-flow">
 
-<!-- SERVICES -->
-<section id="services" class="pb-20">
-  <div class="section-container">
-
-    <div class="text-center mb-10">
-      <h2 class="text-2xl font-bold">Church Services</h2>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <div class="card">
-        <h3 class="font-bold text-lg">Sunday Worship</h3>
-        <p class="text-gray-500">9:00 AM</p>
+    <!-- HERO -->
+    <section class="section-shell text-center pt-24 md:pt-28 pb-12 md:pb-16">
+      <div class="section-container">
+        <span class="section-kicker">Worship Schedule</span>
+        <h1 class="section-heading">Services &amp; Events</h1>
+        <p class="section-subtitle">
+          Join our church family in worship, prayer, fellowship, and ministry gatherings.
+        </p>
       </div>
+    </section>
 
-      <div class="card">
-        <h3 class="font-bold text-lg">Prayer Meeting</h3>
-        <p class="text-gray-500">Wednesday • 7:30 PM</p>
-      </div>
+    <!-- SERVICES -->
+    <section id="services" class="section-shell section-top-fade section-bottom-fade relative overflow-hidden bg-gradient-to-bl from-blue-700 via-blue-600 to-blue-500 text-white">
 
-    </div>
+<!-- Glossy Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
+      <div class="section-container">
+        <div class="text-center stack-heading">
+          <span class="section-kicker">Worship Schedule</span>
+          <h3 class="section-heading text-slate-900">
+<p class="text-xl md:text-2xl font-semibold text-white/95 max-w-3xl mx-auto leading-relaxed tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]">
+            Join our regular worship gatherings and fellowship activities throughout the week and month.
+          </p>
+        </div>
 
-  </div>
-</section>
+        <div class="grid md:grid-cols-2 gap-8 card-grid-balanced">
+          <div class="card-system card-system-pad card-centered bg-white/95 backdrop-blur">
+            <span class="card-badge">Weekly Service</span>
+            <h4 class="card-title-lg">Sunday Worship</h4>
+            <p class="card-meta">9:00 AM</p>
+            <p class="card-description">Come together in praise, worship, and hearing the Word of God every Sunday.</p>
+          </div>
 
-<!-- EVENTS (GOOGLE SHEETS CONNECTED) -->
-<section id="events" class="pb-24">
-  <div class="section-container">
+          <div class="card-system card-system-pad card-centered card-soft-slate">
+            <span class="card-badge">Midweek Gathering</span>
+            <h4 class="card-title-lg">Prayer Meeting</h4>
+            <p class="card-meta">Wednesday · 7:30 PM</p>
+            <p class="card-description">Seek God in prayer and join the church family in faith-filled intercession.</p>
+          </div>
 
-    <div class="text-center mb-10">
-      <h2 class="text-2xl font-bold">Upcoming Events</h2>
-    </div>
+          <div class="card-system card-system-pad card-centered card-soft-slate">
+            <span class="card-badge">Monthly Fellowship</span>
+            <h4 class="card-title-lg">Overnight Fellowship</h4>
+            <p class="card-meta">Every last Friday of the Month · 9:00 PM</p>
+            <p class="card-description">A special time of fellowship, worship, prayer, and spiritual refreshment through the night.</p>
+          </div>
 
-    <div id="eventsList" class="grid md:grid-cols-2 gap-6"></div>
-
-  </div>
-</section>
-
-<!-- FOOTER (MATCH HOME) -->
-<footer class="bg-gray-950 text-white pt-16 pb-6">
-  <div class="max-w-6xl mx-auto px-4">
-
-    <div class="grid md:grid-cols-3 gap-10">
-
-      <!-- LOGO -->
-      <div>
-        <div class="flex items-center gap-4">
-          <img src="https://i.imgur.com/EsoHkMb.png" class="w-16 h-16 rounded-full">
-          <div>
-            <h2 class="text-xl font-bold">AGHAM CHURCH</h2>
-            <p class="text-blue-300 text-sm">Apostolic Ministry</p>
+          <div class="card-system card-system-pad card-centered card-soft-slate">
+            <span class="card-badge">Monthly Gathering</span>
+            <h4 class="card-title-lg">Joint Fellowship</h4>
+            <p class="card-meta">Every first Sunday of the Month</p>
+            <p class="card-description">Join the church family in a united fellowship as we strengthen our bond in Christ together.</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- LINKS -->
-      <div>
-        <h3 class="font-bold mb-3">Quick Links</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="services.html#services">Services</a></li>
-          <li><a href="services.html#events">Events</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+    <!-- EVENTS -->
+    <section id="events" class="section-shell px-4 logo-watermark-section section-top-fade section-bottom-fade">
+      <div class="logo-watermark-bg">
+        <img src="https://i.imgur.com/EsoHkMb.png" alt="">
       </div>
+      <div class="logo-watermark-soft"></div>
 
-      <!-- CONNECT -->
-      <div>
-        <h3 class="font-bold mb-3">Connect</h3>
-
-        <div class="flex gap-3 flex-wrap">
-          <a href="https://www.facebook.com/aghamincph"
-             target="_blank"
-             class="px-5 py-2 rounded-full bg-white text-blue-900 font-semibold">
-            Facebook
-          </a>
-
-          <a href="index.html"
-             class="px-5 py-2 rounded-full bg-white/10">
-            Back to Home
-          </a>
+      <div class="logo-watermark-content section-container">
+        <div class="text-center stack-heading">
+          <span class="section-kicker">Join Us</span>
+          <h3 class="section-heading">Upcoming Events</h3>
+          <p class="section-subtitle">
+            Join our upcoming services, fellowships, and ministry gatherings.
+          </p>
         </div>
+
+        <div id="eventsList" class="grid md:grid-cols-2 gap-6"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#08152d] text-white pt-16 pb-6 section-top-fade">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-10 md:gap-12 text-center md:text-left">
+
+        <div>
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-4 justify-center md:justify-start">
+            <img src="https://i.imgur.com/EsoHkMb.png"
+                 class="w-16 h-16 rounded-full shadow-[0_10px_30px_rgba(37,99,235,0.22)] border border-white/10"
+                 alt="AGHAM Church Logo">
+            <div>
+              <h2 class="text-xl font-extrabold tracking-tight text-white">AGHAM CHURCH</h2>
+              <p class="text-sm text-blue-300 font-medium">Apostolic Ministry</p>
+            </div>
+          </div>
+
+          <p class="text-sm leading-7 text-gray-400 mt-5 max-w-md mx-auto md:mx-0">
+            Almighty God of Heaven Apostolic Ministry is dedicated to spreading the Gospel, making disciples, and building a strong faith community centered on Christ.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2.5 text-sm text-gray-300">
+            <li><a href="index.html#about" class="hover:text-blue-400 transition duration-300">About</a></li>
+            <li><a href="visit.html" class="hover:text-blue-400 transition duration-300">Visit</a></li>
+            <li><a href="leadership.html" class="hover:text-blue-400 transition duration-300">Leadership</a></li>
+            <li><a href="index.html#contact" class="hover:text-blue-400 transition duration-300">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white mb-4">Connect</h3>
+
+          <div class="flex flex-wrap justify-center md:justify-start gap-3 text-sm mt-6 mb-3">
+            <a href="https://www.facebook.com/aghamincph"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-blue-900 font-semibold border border-white shadow-md hover:scale-[1.03] hover:bg-blue-50 transition duration-300">
+              <span>Facebook</span>
+            </a>
+
+            <a href="index.html"
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 text-white font-medium border border-white/15 hover:bg-white/15 transition duration-300">
+              <span>Back to Home</span>
+            </a>
+          </div>
+        </div>
+
       </div>
 
+      <div class="border-t border-white/10 text-center py-5 text-xs text-gray-500 mt-8">
+        © 2026 AGHAM Church. All rights reserved.
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- FLOATING MESSENGER -->
-<a href="https://m.me/aghamincph" target="_blank" class="fixed bottom-24 right-5 w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
-  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" class="w-7">
-</a>
+  <!-- FLOATING MESSENGER ICON -->
+  <a href="https://m.me/aghamincph"
+     target="_blank"
+     aria-label="Open Messenger"
+     class="fixed bottom-5 right-5 z-50 w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-blue-500 text-white shadow-[0_12px_30px_rgba(37,99,235,0.35)] hover:scale-110 hover:shadow-[0_16px_40px_rgba(37,99,235,0.5)] transition duration-300 group">
 
-<!-- GOOGLE SHEETS SCRIPT (COPY FROM INDEX) -->
-<script>
-/* PASTE MO DITO YUNG EVENTS SCRIPT MO FROM INDEX.HTML */
-</script>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="w-6 h-6 transition duration-300 group-hover:rotate-6"
+         fill="currentColor"
+         viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.02 2 10.9c0 2.78 1.42 5.27 3.64 6.9V22l3.17-1.74c1 .27 2.07.42 3.19.42 5.52 0 10-4.02 10-8.9S17.52 2 12 2zm1.02 11.61l-2.55-2.72-5.02 2.72 5.53-5.86 2.57 2.72 5-2.72-5.53 5.86z"/>
+    </svg>
+  </a>
 
+  <script>
+    function parseCSVLine(line) {
+      const result = [];
+      let current = "";
+      let insideQuotes = false;
+
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        const next = line[i + 1];
+
+        if (char === '"' && insideQuotes && next === '"') {
+          current += '"';
+          i++;
+        } else if (char === '"') {
+          insideQuotes = !insideQuotes;
+        } else if (char === ',' && !insideQuotes) {
+          result.push(current.trim());
+          current = "";
+        } else {
+          current += char;
+        }
+      }
+
+      result.push(current.trim());
+      return result.map(cell => cell.replace(/^"|"$/g, "").trim());
+    }
+
+    function isValidHttpLink(value) {
+      return /^https?:\/\//i.test((value || "").trim());
+    }
+
+    function createTextElement(tag, text, className = "") {
+      const el = document.createElement(tag);
+      el.textContent = text;
+      if (className) el.className = className;
+      return el;
+    }
+
+    function createDataCard({
+      title,
+      details,
+      link,
+      wrapperClass,
+      titleClass,
+      detailsClass,
+      badgeText = "",
+      showLinkIndicator = true
+    }) {
+      const hasValidLink = isValidHttpLink(link);
+      const card = document.createElement(hasValidLink ? "a" : "div");
+
+      if (hasValidLink) {
+        card.href = link;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+      }
+
+      card.className = `${wrapperClass} transition block`;
+
+      if (badgeText) {
+        const badgeEl = createTextElement("span", badgeText, "card-badge");
+        card.appendChild(badgeEl);
+      }
+
+      const titleEl = createTextElement("h4", title, titleClass);
+      const detailsEl = createTextElement("p", details, detailsClass);
+
+      card.appendChild(titleEl);
+      card.appendChild(detailsEl);
+
+      if (hasValidLink && showLinkIndicator) {
+        const linkIndicator = createTextElement("div", "Read more", "card-link-indicator");
+        card.appendChild(linkIndicator);
+      }
+
+      return card;
+    }
+
+    function renderLoadingCards(container, count, extraClass = "") {
+      container.innerHTML = "";
+      for (let i = 0; i < count; i++) {
+        const loading = document.createElement("div");
+        loading.className = `loading-card ${extraClass}`;
+        container.appendChild(loading);
+      }
+    }
+
+    function renderEmptyMessage(container, message, className = "") {
+      container.innerHTML = "";
+      const empty = document.createElement("div");
+      empty.className = className || "text-center text-slate-500 md:col-span-2";
+      empty.textContent = message;
+      container.appendChild(empty);
+    }
+
+    const SHEET_ID = "1VqSpUe-5o0Px0UPyvqkG_DvayjwWluLU3KRyV7r75ME";
+    const EVENTS_GID = "1375025455";
+    const eventsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${EVENTS_GID}`;
+
+    const eventsList = document.getElementById("eventsList");
+
+    if (eventsList) {
+      renderLoadingCards(eventsList, 2, "min-h-[140px]");
+    }
+
+    fetch(eventsCsvUrl)
+      .then(response => response.text())
+      .then(csv => {
+        eventsList.innerHTML = "";
+
+        const rows = csv.trim().split("\n").map(row =>
+          parseCSVLine(row.replace(/\r/g, ""))
+        );
+
+        let validCount = 0;
+
+        rows.forEach(row => {
+          const title = row[0] || "";
+          const details = row[1] || "";
+          const link = row[2] || "";
+
+          if (!title) return;
+          validCount++;
+
+          const card = createDataCard({
+            title,
+            details,
+            link,
+            wrapperClass: "card-system card-system-pad card-soft-highlight",
+            titleClass: "card-title-lg",
+            detailsClass: "card-description",
+            badgeText: "Upcoming Event",
+            showLinkIndicator: true
+          });
+
+          eventsList.appendChild(card);
+        });
+
+        if (!validCount) {
+          renderEmptyMessage(
+            eventsList,
+            "No events found yet.",
+            "text-center text-red-500 md:col-span-2"
+          );
+        }
+      })
+      .catch(error => {
+        console.error("Events CSV load error:", error);
+        renderEmptyMessage(
+          eventsList,
+          "Unable to load events right now.",
+          "text-center text-red-500 md:col-span-2"
+        );
+      });
+  </script>
 </body>
 </html>
