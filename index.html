@@ -1698,6 +1698,271 @@ section[id] {
   position: relative;
   z-index: 1;
 }
+
+
+/* ========================================
+   MOBILE NAV STANDARD - SOFT GLASS
+======================================== */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.48);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+  z-index: 9997;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(84vw, 360px);
+  height: 100vh;
+  color: #ffffff;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.015) 22%, rgba(255,255,255,0) 45%),
+    linear-gradient(160deg, #163f8f 0%, #1d4ed8 40%, #2563eb 72%, #1e40af 100%);
+  box-shadow: -18px 0 40px rgba(15, 23, 42, 0.34);
+  border-left: 1px solid rgba(255,255,255,0.16);
+  border-top-left-radius: 28px;
+  border-bottom-left-radius: 28px;
+  transform: translateX(108%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.32s ease, opacity 0.28s ease, visibility 0.28s ease;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+.mobile-menu-drawer.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-sheen {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.22), transparent 32%),
+    linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0) 26%);
+  pointer-events: none;
+}
+
+.mobile-menu-inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: max(18px, env(safe-area-inset-top)) 18px 22px;
+}
+
+.mobile-menu-close {
+  align-self: flex-end;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.85rem;
+  line-height: 1;
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.mobile-menu-close:hover,
+.mobile-menu-close:active {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.28);
+  transform: translateY(-1px);
+}
+
+.mobile-menu-brand {
+  text-align: center;
+  padding: 6px 8px 16px;
+}
+
+.mobile-menu-brand img {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  margin: 0 auto 12px;
+  border: 1px solid rgba(255,255,255,0.28);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
+}
+
+.mobile-menu-brand h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.mobile-menu-brand p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 0.04em;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.mobile-menu-links::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-menu-links::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.22);
+  border-radius: 999px;
+}
+
+.mobile-accordion,
+.mobile-standalone-link {
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
+  overflow: hidden;
+}
+
+.mobile-accordion-toggle,
+.mobile-standalone-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.mobile-accordion-toggle:hover,
+.mobile-accordion-toggle:active,
+.mobile-standalone-link:hover,
+.mobile-standalone-link:active {
+  background: rgba(255,255,255,0.13);
+}
+
+.mobile-chevron {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.86);
+  transition: transform 0.24s ease;
+  flex-shrink: 0;
+}
+
+.mobile-accordion.open .mobile-chevron {
+  transform: rotate(180deg);
+}
+
+.mobile-accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.26s ease;
+}
+
+.mobile-accordion.open .mobile-accordion-content {
+  grid-template-rows: 1fr;
+}
+
+.mobile-accordion-content > div,
+.mobile-accordion-content {
+  min-height: 0;
+}
+
+.mobile-accordion-content a {
+  display: block;
+  margin: 0 10px 8px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  color: rgba(255,255,255,0.86);
+  font-size: 0.93rem;
+  line-height: 1.45;
+  background: rgba(255,255,255,0.05);
+  transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease;
+}
+
+.mobile-accordion.open .mobile-accordion-content a:first-child {
+  margin-top: 2px;
+}
+
+.mobile-accordion-content a:hover,
+.mobile-accordion-content a:active {
+  background: rgba(255,255,255,0.11);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.mobile-standalone-link {
+  justify-content: flex-start;
+  margin-top: 2px;
+  background: rgba(255,255,255,0.11);
+}
+
+.mobile-standalone-link + .mobile-standalone-link {
+  margin-top: -2px;
+}
+
+.mobile-menu-footer {
+  text-align: center;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.74);
+  padding-top: 16px;
+  margin-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+@media (max-width: 380px) {
+  .mobile-menu-inner {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .mobile-accordion-toggle,
+  .mobile-standalone-link {
+    padding: 14px 15px;
+    font-size: 0.97rem;
+  }
+
+  .mobile-accordion-content a {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-overlay,
+  .mobile-menu-drawer {
+    display: none !important;
+  }
+}
 </style>
 </head>
 
@@ -1755,78 +2020,66 @@ section[id] {
 </header>
 
 <!-- MOBILE OVERLAY -->
-<div id="mobileOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"></div>
+<div id="mobileOverlay" class="mobile-menu-overlay md:hidden" onclick="toggleMenu()"></div>
 
 <!-- MOBILE SIDE MENU -->
-<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 text-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y">
-  <div class="flex justify-between items-center p-5 border-b border-white/20">
-    <div class="flex items-center gap-3">
-      <img src="https://i.imgur.com/EsoHkMb.png" class="w-12 h-12 rounded-full shadow-lg border border-white/30">
-      <div>
-        <h2 class="text-xl font-bold">AGHAM</h2>
-        <p class="text-xs text-white/80">Church Menu</p>
-      </div>
+<div id="mobileMenu" class="mobile-menu-drawer md:hidden" aria-hidden="true">
+  <div class="mobile-menu-sheen"></div>
+
+  <div class="mobile-menu-inner">
+    <button onclick="toggleMenu()" class="mobile-menu-close" aria-label="Close menu">
+      <span>&times;</span>
+    </button>
+
+    <div class="mobile-menu-brand">
+      <img src="https://i.imgur.com/EsoHkMb.png" alt="AGHAM Church Logo">
+      <h2>Welcome to AGHAM</h2>
+      <p>Worship • Grow • Serve</p>
     </div>
-    <button onclick="toggleMenu()" class="text-2xl bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition">&times;</button>
-  </div>
 
-  <div class="px-5 pt-4 pb-2">
-    <p class="text-sm text-white/80">Navigate</p>
-  </div>
+    <nav class="mobile-menu-links" aria-label="Mobile navigation">
+      <div class="mobile-accordion">
+        <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+          <span>Home</span>
+          <span class="mobile-chevron">⌄</span>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="#about" class="mobile-menu-link">Who We Are</a>
+          <a href="#identity" class="mobile-menu-link">Mission / Vision / Core Values</a>
+          <a href="#announcements" class="mobile-menu-link">Announcement</a>
+          <a href="#contact" class="mobile-menu-link">Contact</a>
+        </div>
+      </div>
 
-  <nav class="flex flex-col px-4 pb-6 space-y-2 text-lg font-medium">
+      <div class="mobile-accordion">
+        <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+          <span>Services</span>
+          <span class="mobile-chevron">⌄</span>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="services.html#services" class="mobile-menu-link">Worship Schedule</a>
+          <a href="services.html#events" class="mobile-menu-link">Events</a>
+        </div>
+      </div>
 
-  <a href="#" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    🏠 Home
-  </a>
+      <div class="mobile-accordion">
+        <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+          <span>Ministry</span>
+          <span class="mobile-chevron">⌄</span>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="leadership.html" class="mobile-menu-link">Leadership</a>
+          <a href="leadership.html#gallery" class="mobile-menu-link">Gallery</a>
+        </div>
+      </div>
 
-  <a href="#about" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    📖 About
-  </a>
+      <a href="prayer.html" class="mobile-standalone-link mobile-menu-link">Prayer</a>
+      <a href="giving.html" class="mobile-standalone-link mobile-menu-link">Giving</a>
+    </nav>
 
-  <a href="#identity" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    📌 Mission
-  </a>
-
-  <!-- SERVICES GROUP -->
-  <div class="px-4 pt-2 text-sm text-white/70">Services</div>
-
-  <a href="services.html#services" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    ⛪ Worship Schedule
-  </a>
-
-  <a href="services.html#events" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    📅 Events
-  </a>
-
-  <!-- MINISTRY GROUP -->
-  <div class="px-4 pt-2 text-sm text-white/70">Ministry</div>
-
-  <a href="leadership.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    👥 Leadership
-  </a>
-
-  <a href="leadership.html#gallery" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    🖼️ Gallery
-  </a>
-
-  <!-- SOLO LINKS -->
-  <a href="prayer.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    🙏 Prayer
-  </a>
-
-  <a href="giving.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    💳 Giving
-  </a>
-
-  <a href="#contact" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
-    📞 Contact
-  </a>
-
-</nav>
-
-  <div class="absolute bottom-0 left-0 right-0 p-5 border-t border-white/20 bg-black/10">
-    <p class="text-xs text-white/80 text-center">Almighty God of Heaven Apostolic Ministry</p>
+    <div class="mobile-menu-footer">
+      © 2026 AGHAM. All rights reserved.
+    </div>
   </div>
 </div>
 
@@ -2254,21 +2507,19 @@ function setMenuState(isOpen) {
   const menu = document.getElementById("mobileMenu");
   const overlay = document.getElementById("mobileOverlay");
 
-  if (isOpen) {
-    menu.classList.remove("translate-x-full");
-    overlay.classList.remove("hidden");
-    document.body.classList.add("menu-open");
-  } else {
-    menu.classList.add("translate-x-full");
-    overlay.classList.add("hidden");
-    document.body.classList.remove("menu-open");
-  }
+  if (!menu || !overlay) return;
+
+  menu.classList.toggle("active", isOpen);
+  overlay.classList.toggle("active", isOpen);
+  menu.setAttribute("aria-hidden", isOpen ? "false" : "true");
+  document.body.classList.toggle("menu-open", isOpen);
 }
 
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
-  const isClosed = menu.classList.contains("translate-x-full");
-  setMenuState(isClosed);
+  if (!menu) return;
+  const isOpen = menu.classList.contains("active");
+  setMenuState(!isOpen);
 }
 
 window.addEventListener("scroll", () => {
@@ -2282,6 +2533,36 @@ document.addEventListener("keydown", (e) => {
     setMenuState(false);
     closeLightbox();
   }
+});
+
+document.querySelectorAll(".mobile-menu-link").forEach((link) => {
+  link.addEventListener("click", () => setMenuState(false));
+});
+
+const mobileAccordions = document.querySelectorAll(".mobile-accordion");
+mobileAccordions.forEach((accordion, index) => {
+  const toggle = accordion.querySelector(".mobile-accordion-toggle");
+  if (!toggle) return;
+
+  if (index === 0) {
+    accordion.classList.add("open");
+    toggle.setAttribute("aria-expanded", "true");
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = accordion.classList.contains("open");
+
+    mobileAccordions.forEach((item) => {
+      item.classList.remove("open");
+      const itemToggle = item.querySelector(".mobile-accordion-toggle");
+      if (itemToggle) itemToggle.setAttribute("aria-expanded", "false");
+    });
+
+    if (!isOpen) {
+      accordion.classList.add("open");
+      toggle.setAttribute("aria-expanded", "true");
+    }
+  });
 });
 
 /* LIGHTBOX */
@@ -2324,37 +2605,40 @@ let startX = 0;
 let currentX = 0;
 let isSwiping = false;
 
-mobileMenu.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-  currentX = startX;
-  isSwiping = true;
-}, { passive: true });
+if (mobileMenu) {
+  mobileMenu.addEventListener("touchstart", (e) => {
+    if (!mobileMenu.classList.contains("active")) return;
+    startX = e.touches[0].clientX;
+    currentX = startX;
+    isSwiping = true;
+  }, { passive: true });
 
-mobileMenu.addEventListener("touchmove", (e) => {
-  if (!isSwiping) return;
+  mobileMenu.addEventListener("touchmove", (e) => {
+    if (!isSwiping) return;
 
-  currentX = e.touches[0].clientX;
-  const diffX = currentX - startX;
+    currentX = e.touches[0].clientX;
+    const diffX = currentX - startX;
 
-  if (diffX > 0) {
-    mobileMenu.style.transform = `translateX(${diffX}px)`;
-  }
-}, { passive: true });
+    if (diffX > 0) {
+      mobileMenu.style.transform = `translateX(${diffX}px)`;
+    }
+  }, { passive: true });
 
-mobileMenu.addEventListener("touchend", () => {
-  if (!isSwiping) return;
+  mobileMenu.addEventListener("touchend", () => {
+    if (!isSwiping) return;
 
-  const diffX = currentX - startX;
-  mobileMenu.style.transform = "";
+    const diffX = currentX - startX;
+    mobileMenu.style.transform = "";
 
-  if (diffX > 80 && !mobileMenu.classList.contains("translate-x-full")) {
-    setMenuState(false);
-  }
+    if (diffX > 80 && mobileMenu.classList.contains("active")) {
+      setMenuState(false);
+    }
 
-  startX = 0;
-  currentX = 0;
-  isSwiping = false;
-});
+    startX = 0;
+    currentX = 0;
+    isSwiping = false;
+  });
+}
 
 /* CSV PARSER */
 function parseCSVLine(line) {
