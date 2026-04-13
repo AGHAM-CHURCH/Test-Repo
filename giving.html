@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giving | AGHAM Church</title>
+<meta name="description" content="Support the ministry of AGHAM Church through secure bank giving. Your generosity helps support the mission, ministry work, and outreach programs of the church.">
+<meta name="keywords" content="AGHAM Church Giving, AGHAM Donation, Church Giving Philippines, BDO Church Donation">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:title" content="Giving | AGHAM Church">
+<meta property="og:description" content="Support the ministry work and outreach programs of AGHAM Church.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://i.imgur.com/EsoHkMb.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Giving | AGHAM Church">
+<meta name="twitter:description" content="Support the ministry work and outreach programs of AGHAM Church.">
+<meta name="twitter:image" content="https://i.imgur.com/EsoHkMb.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* NAVBAR */
+#navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.72);
+}
+
+.logo-glow {
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.9),
+              0 0 40px rgba(96, 165, 250, 0.6);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shrink {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+/* SECTION SYSTEM */
+.section-shell {
+  position: relative;
+  padding-top: 92px;
+  padding-bottom: 92px;
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  color: #64748b;
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* SEPARATORS */
+.section-top-fade::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(148, 163, 184, 0.22),
+    transparent
+  );
+}
+
+.section-bottom-fade::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(148, 163, 184, 0.18),
+    transparent
+  );
+}
+
+/* HERO */
+.giving-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 160px;
+  padding-bottom: 105px;
+  text-align: center;
+  color: white;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.16), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.12), transparent 30%),
+    linear-gradient(135deg, #0f172a 0%, #1d4ed8 45%, #60a5fa 100%);
+}
+
+.giving-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.12), rgba(0,0,0,0.05));
+  pointer-events: none;
+}
+
+.giving-hero-inner {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.04;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.hero-subtitle {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.12rem);
+  line-height: 1.8;
+  color: rgba(255,255,255,0.92);
+}
+
+/* PAGE BACKGROUND */
+.giving-page-section {
+  background:
+    radial-gradient(circle at top center, rgba(219,234,254,0.55), transparent 35%),
+    linear-gradient(180deg, #f8fbff 0%, #eff6ff 45%, #f8fafc 100%);
+}
+
+/* LAYOUT */
+.giving-layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.giving-info-panel,
+.giving-card {
+  border-radius: 30px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(191, 219, 254, 0.85);
+  box-shadow: 0 18px 48px rgba(37, 99, 235, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+/* LEFT PANEL */
+.giving-info-panel {
+  padding: 34px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.giving-info-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,0.10), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(96,165,250,0.10), transparent 28%);
+  pointer-events: none;
+}
+
+.giving-info-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.giving-info-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.giving-info-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+  line-height: 1.12;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.giving-info-text {
+  color: #475569;
+  line-height: 1.85;
+  font-size: 1rem;
+}
+
+.giving-info-points {
+  margin-top: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.giving-point {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 16px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.giving-point:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(37,99,235,0.08);
+}
+
+.giving-point-icon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  font-size: 1.25rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.giving-point h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.giving-point p {
+  color: #64748b;
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+/* RIGHT CARD */
+.giving-card {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 34px 28px;
+  background: linear-gradient(135deg, #ffffff, #eff6ff);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.giving-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(96,165,250,0.10), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(37,99,235,0.08), transparent 24%);
+  pointer-events: none;
+}
+
+.giving-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.giving-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 24px 52px rgba(37, 99, 235, 0.16);
+}
+
+.giving-card-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+.giving-card-subtitle {
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 26px;
+}
+
+.giving-field {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  padding: 16px 16px;
+  margin-bottom: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.giving-field:hover {
+  transform: translateX(6px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.08);
+  border-color: #93c5fd;
+}
+
+.giving-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.45px;
+}
+
+.giving-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  word-break: break-word;
+  margin-bottom: 12px;
+  line-height: 1.65;
+}
+
+.giving-copy-btn {
+  border: none;
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  color: #fff;
+  padding: 9px 15px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.giving-copy-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.28);
+}
+
+.giving-copy-btn:active {
+  transform: scale(0.96);
+}
+
+.giving-note {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.giving-bottom-note {
+  margin-top: 28px;
+  text-align: center;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* NAV ACTIVE */
+.nav-active {
+  color: #2563eb !important;
+  font-weight: 700;
+}
+
+/* FOOTER LINKS */
+.footer-link {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible,
+.footer-link-active {
+  color: #60a5fa !important;
+}
+
+/* FLOATING BUTTONS */
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 998;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+#backToTopBtn:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+}
+
+.messenger-float {
+  position: fixed;
+  right: 20px;
+  bottom: 86px;
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0084ff, #1da1ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 132, 255, 0.35);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.messenger-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 30px rgba(0, 132, 255, 0.45);
+}
+
+.messenger-float img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* FOOTER BUTTONS */
+.footer-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 991px) {
+  .giving-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .giving-info-panel,
+  .giving-card {
+    border-radius: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-shell {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .giving-hero {
+    padding-top: 136px;
+    padding-bottom: 84px;
+  }
+
+  .giving-info-panel,
+  .giving-card {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .giving-card-title {
+    font-size: 1.55rem;
+  }
+
+  .giving-copy-btn {
+    width: 100%;
+  }
+
+  .messenger-float {
+    right: 16px;
+    bottom: 84px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .messenger-float img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* ===== NAVBAR SYSTEM (same as services / leadership / prayer) ===== */
+.nav-link {
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #2563eb;
+}
+
+.nav-link-active {
+  color: #2563eb !important;
+  font-weight: 700;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: rgba(255,255,255,0.98);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+  padding: 8px 0;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  pointer-events: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dropdown-bridge {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 14px;
+}
+
+.nav-dropdown-link {
+  display: block;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  color: #1f2937;
+  white-space: nowrap;
+  transition: background 0.22s ease, color 0.22s ease;
+}
+
+.nav-dropdown-link:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+}
+</style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed w-full z-50 shadow transition-all overflow-visible">
+  <div id="navContent" class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center gap-4 overflow-visible">
+    <div class="flex items-center gap-4">
+      <a href="index.html" class="flex items-center gap-4">
+        <img src="https://i.imgur.com/EsoHkMb.png" alt="AGHAM Church Logo" class="w-20 h-20 md:w-24 md:h-24 rounded-full logo-glow">
+        <h1 class="text-2xl md:text-4xl font-extrabold gradient-text">AGHAM</h1>
+      </a>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-6 font-medium text-[15px] xl:text-base whitespace-nowrap ml-auto text-slate-800">
+
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="index.html#about" class="nav-link">About</a>
+  <a href="index.html#identity" class="nav-link">Mission</a>
+
+  <!-- SERVICES -->
+  <div class="nav-dropdown">
+    <button type="button" class="flex items-center gap-2 nav-link cursor-pointer">
+      <span>Services</span>
+      <span>▼</span>
+    </button>
+    <div class="nav-dropdown-bridge"></div>
+    <div class="nav-dropdown-menu">
+      <a href="services.html#services" class="nav-dropdown-link">Worship Schedule</a>
+      <a href="services.html#events" class="nav-dropdown-link">Events</a>
+    </div>
+  </div>
+
+  <!-- MINISTRY -->
+  <div class="nav-dropdown">
+    <button type="button" class="flex items-center gap-2 nav-link cursor-pointer">
+      <span>Ministry</span>
+      <span>▼</span>
+    </button>
+    <div class="nav-dropdown-bridge"></div>
+    <div class="nav-dropdown-menu">
+      <a href="leadership.html" class="nav-dropdown-link">Leadership</a>
+      <a href="leadership.html#gallery" class="nav-dropdown-link">Gallery</a>
+    </div>
+  </div>
+
+  <a href="prayer.html" class="nav-link">Prayer</a>
+  <a href="giving.html" class="nav-link-active">Giving</a>
+  <a href="index.html#contact" class="nav-link">Contact</a>
+
+</nav>
+
+    <button onclick="toggleMenu()" class="md:hidden text-2xl text-blue-700 font-bold">☰</button>
+  </div>
+</header>
+
+<!-- MOBILE OVERLAY -->
+<div id="mobileOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"></div>
+
+<!-- MOBILE SIDE MENU -->
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 text-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y">
+  <div class="flex justify-between items-center p-5 border-b border-white/20">
+    <div class="flex items-center gap-3">
+      <img src="https://i.imgur.com/EsoHkMb.png" class="w-12 h-12 rounded-full shadow-lg border border-white/30" alt="AGHAM Church Logo">
+      <div>
+        <h2 class="text-xl font-bold">AGHAM</h2>
+        <p class="text-xs text-white/80">Church Menu</p>
+      </div>
+    </div>
+    <button onclick="toggleMenu()" class="text-2xl bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition">&times;</button>
+  </div>
+
+  <div class="px-5 pt-4 pb-2">
+    <p class="text-sm text-white/80">Navigate</p>
+  </div>
+
+  <nav class="flex flex-col px-4 pb-6 space-y-2 text-lg font-medium">
+    <a href="index.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🏠</span><span>Home</span>
+    </a>
+
+    <a href="index.html#about" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📖</span><span>About</span>
+    </a>
+
+    <a href="index.html#identity" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📌</span><span>Mission</span>
+    </a>
+
+    <a href="services.html#services" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>⛪</span><span>Services</span>
+    </a>
+
+    <a href="services.html#events" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📅</span><span>Events</span>
+    </a>
+
+    <a href="leadership.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>👥</span><span>Leadership</span>
+    </a>
+
+    <a href="leadership.html#gallery" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🖼️</span><span>Gallery</span>
+    </a>
+
+    <a href="prayer.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🙏</span><span>Prayer</span>
+    </a>
+
+    <a href="giving.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/15 text-white transition">
+      <span>💳</span><span>Giving</span>
+    </a>
+
+    <a href="index.html#contact" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📞</span><span>Contact</span>
+    </a>
+  </nav>
+
+  <div class="absolute bottom-0 left-0 right-0 p-5 border-t border-white/20 bg-black/10">
+    <p class="text-xs text-white/80 text-left">Almighty God of Heaven Apostolic Ministry</p>
+  </div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="giving-hero section-bottom-fade">
+    <div class="giving-hero-inner">
+      <p class="hero-eyebrow" data-aos="fade-up">Support the Ministry</p>
+      <h2 class="hero-title" data-aos="fade-up">Giving With Purpose</h2>
+      <p class="hero-subtitle" data-aos="fade-up">
+        “So let each one give as he purposes in his heart, not grudgingly or of necessity; for God loves a cheerful giver.”
+2 Corinthians 9:7 (NKJV)
+      </p>
+    </div>
+  </section>
+
+  <!-- GIVING CONTENT -->
+  <section id="giving-details" class="section-shell giving-page-section section-top-fade section-bottom-fade">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <span class="section-kicker" data-aos="fade-up">Church Giving</span>
+        <h3 class="section-heading" data-aos="fade-up">Support the Ministry</h3>
+        <p class="section-subtitle" data-aos="fade-up">
+          Thank you for standing with AGHAM CHURCH. Every gift helps strengthen ministry, worship gatherings, outreach efforts, and the work God is doing through the church.
+        </p>
+      </div>
+
+      <div class="giving-layout">
+        <div class="giving-info-panel" data-aos="fade-up">
+          <div class="giving-info-inner">
+            <span class="giving-info-badge">Faithful Generosity</span>
+            <h3 class="giving-info-title">A simple way to support what God is doing through the church.</h3>
+            <p class="giving-info-text">
+              We believe giving is one expression of worship, gratitude, and partnership in ministry. Your support helps strengthen the mission of AGHAM CHURCH and allows the ministry to continue serving families, communities, and outreach programs with excellence and faith.
+            </p>
+
+            <div class="giving-info-points">
+              <div class="giving-point">
+                <div class="giving-point-icon">⛪</div>
+                <div>
+                  <h4>Support the Ministry</h4>
+                  <p>Your giving helps sustain church operations, ministry activities, and worship gatherings.</p>
+                </div>
+              </div>
+
+              <div class="giving-point">
+                <div class="giving-point-icon">🤝</div>
+                <div>
+                  <h4>Strengthen Outreach</h4>
+                  <p>Your generosity helps support programs that reach people and bless the community.</p>
+                </div>
+              </div>
+
+              <div class="giving-point">
+                <div class="giving-point-icon">💙</div>
+                <div>
+                  <h4>Give With Gratitude</h4>
+                  <p>Every gift, big or small, becomes part of the ministry work and mission of the church.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="giving-card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="giving-card-title">Support the Ministry</h3>
+          <p class="giving-card-subtitle">
+            Your generosity helps support the mission, ministry work, and outreach Program of AGHAM CHURCH.
+          </p>
+
+          <div class="giving-field">
+            <span class="giving-label">Bank</span>
+            <span class="giving-value">Banco De Oro (BDO)</span>
+          </div>
+
+          <div class="giving-field">
+            <span class="giving-label">Account Name</span>
+            <span class="giving-value" id="aghamAccountName">Almighty God of Heaven Apostolic Ministry Incorporated</span>
+            <button class="giving-copy-btn" onclick="copyText('aghamAccountName', this, '📋 Copy Account Name')">
+              📋 Copy Account Name
+            </button>
+          </div>
+
+          <div class="giving-field">
+            <span class="giving-label">Account Number</span>
+            <span class="giving-value" id="aghamAccountNumber">012380118953</span>
+            <button class="giving-copy-btn" onclick="copyText('aghamAccountNumber', this, '📋 Copy Account Number')">
+              📋 Copy Account Number
+            </button>
+          </div>
+
+          <p class="giving-note">
+            Please review the account details carefully before sending your gift.
+          </p>
+
+          <div class="giving-bottom-note">
+            Thank you for your generosity, faith, and partnership in the ministry of AGHAM CHURCH.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FLOATING MESSENGER BUTTON -->
+<a
+  href="https://m.me/aghamincph"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="messenger-float"
+  aria-label="Message us on Messenger"
+>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Icon">
+</a>
+
+<!-- BACK TO TOP -->
+<button id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+
+<!-- FOOTER -->
+<footer class="bg-gray-950 text-white pt-16 pb-6 section-top-fade">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-10 md:gap-12 text-left">
+
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-4 justify-start">
+          <img src="https://i.imgur.com/EsoHkMb.png"
+               class="w-16 h-16 rounded-full shadow-[0_10px_30px_rgba(37,99,235,0.22)] border border-white/10"
+               alt="AGHAM Church Logo">
+          <div>
+            <h2 class="text-xl font-extrabold tracking-tight text-white">AGHAM CHURCH</h2>
+            <p class="text-sm text-blue-300 font-medium">Apostolic Ministry</p>
+          </div>
+        </div>
+
+        <p class="text-sm leading-7 text-gray-400 mt-5 max-w-md">
+          Almighty God of Heaven Apostolic Ministry is dedicated to spreading the Gospel,
+          making disciples, and building a strong faith community centered on Christ.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-base font-bold text-white mb-4">Quick Links</h3>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="index.html#about" class="footer-link">About</a></li>
+          <li><a href="services.html#services" class="footer-link">Services</a></li>
+          <li><a href="services.html#events" class="footer-link">Events</a></li>
+          <li><a href="prayer.html" class="footer-link">Prayer</a></li>
+          <li><a href="giving.html" class="footer-link footer-link-active">Giving</a></li>
+          <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-base font-bold text-white mb-4">Contact</h3>
+
+        <div class="space-y-2.5 text-sm text-gray-400">
+          <p>📍 Teresa, Rizal</p>
+          <p>📞 0938-8484-568</p>
+          <p>📧 agham.inc.ph@gmail.com</p>
+        </div>
+
+        <div class="flex flex-wrap justify-start gap-3 text-sm mt-6 mb-3">
+          <a href="https://www.facebook.com/aghamincph"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-social-btn bg-white text-blue-900 border border-white shadow-md hover:bg-blue-50 hover:shadow-[0_10px_24px_rgba(255,255,255,0.14)]">
+            <span>Facebook</span>
+          </a>
+
+          <a href="index.html"
+             class="footer-social-btn bg-white/10 text-white border border-white/15 hover:bg-white/15">
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-10 pt-5 border-t border-white/10 text-left text-xs text-gray-500">
+      © 2026 AGHAM Church. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 900,
+  once: true
+});
+
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+  const body = document.body;
+
+  const isOpen = menu.classList.contains('translate-x-0');
+
+  if (isOpen) {
+    menu.classList.remove('translate-x-0');
+    menu.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+    body.classList.remove('menu-open');
+  } else {
+    menu.classList.remove('translate-x-full');
+    menu.classList.add('translate-x-0');
+    overlay.classList.remove('hidden');
+    body.classList.add('menu-open');
+  }
+}
+
+window.addEventListener('scroll', function () {
+  const navContent = document.getElementById('navContent');
+  const backToTopBtn = document.getElementById('backToTopBtn');
+
+  if (window.scrollY > 40) {
+    navContent.classList.add('shrink');
+  } else {
+    navContent.classList.remove('shrink');
+  }
+
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function copyText(elementId, button, originalText) {
+  const text = document.getElementById(elementId).innerText;
+
+  navigator.clipboard.writeText(text).then(() => {
+    button.innerText = '✅ Copied!';
+    setTimeout(() => {
+      button.innerText = originalText;
+    }, 1500);
+  }).catch(() => {
+    button.innerText = '❌ Failed';
+    setTimeout(() => {
+      button.innerText = originalText;
+    }, 1500);
+  });
+}
+</script>
+
+</body>
+</html>
