@@ -63,6 +63,89 @@ body.menu-open {
   padding-bottom: 6px !important;
 }
 
+/* ===== NAVBAR SYSTEM (same as individual pages) ===== */
+#navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  overflow: visible !important;
+}
+
+#navContent {
+  position: relative;
+  z-index: 9999;
+  overflow: visible !important;
+}
+
+.nav-link {
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #2563eb;
+}
+
+.nav-dropdown {
+  position: relative;
+  overflow: visible !important;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: rgba(255,255,255,0.98);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+  padding: 8px 0;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  pointer-events: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dropdown-bridge {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 14px;
+}
+
+.nav-dropdown-link {
+  display: block;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  color: #1f2937;
+  white-space: nowrap;
+  transition: background 0.22s ease, color 0.22s ease;
+}
+
+.nav-dropdown-link:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* para siguradong hindi matakpan ng hero */
+main,
+.page-flow,
+section {
+  position: relative;
+  z-index: 1;
+}
+
 /* Slide animation */
 @keyframes slideRight {
   from { transform: translateX(-100%); opacity: 0; }
@@ -1631,19 +1714,40 @@ section[id] {
       <h1 class="text-2xl md:text-4xl font-extrabold gradient-text">AGHAM</h1>
     </div>
 
-    <nav class="hidden md:flex items-center gap-4 lg:gap-5 font-medium text-[15px] xl:text-base whitespace-nowrap ml-auto text-slate-800">
+    <nav class="hidden md:flex items-center gap-5 font-medium text-[15px] whitespace-nowrap ml-auto text-slate-800">
+
   <a href="#" class="hover:text-blue-600 transition">Home</a>
   <a href="#about" class="hover:text-blue-600 transition">About</a>
   <a href="#identity" class="hover:text-blue-600 transition">Mission</a>
-  <a href="services.html#services" class="hover:text-blue-600 transition">Services</a>
-<a href="services.html#events" class="hover:text-blue-600 transition">Events</a>
-<a href="leadership.html" class="hover:text-blue-500 transition">
-  Leadership
-</a>
-  <a href="leadership.html#gallery" class="hover:text-blue-600 transition">Gallery</a>
-  <a href="prayer.html">Prayer</a>
-  <a href="#giving" class="hover:text-blue-600 transition">Giving</a>
+
+  <!-- SERVICES GROUP -->
+  <div class="nav-dropdown">
+    <button type="button" class="nav-trigger hover:text-blue-600 transition">
+      <span>Services</span>
+      <span>▼</span>
+    </button>
+    <div class="nav-dropdown-menu">
+      <a href="services.html#services" class="nav-dropdown-link">Worship Schedule</a>
+      <a href="services.html#events" class="nav-dropdown-link">Events</a>
+    </div>
+  </div>
+
+  <!-- MINISTRY GROUP -->
+  <div class="nav-dropdown">
+    <button type="button" class="nav-trigger hover:text-blue-600 transition">
+      <span>Ministry</span>
+      <span>▼</span>
+    </button>
+    <div class="nav-dropdown-menu">
+      <a href="leadership.html" class="nav-dropdown-link">Leadership</a>
+      <a href="leadership.html#gallery" class="nav-dropdown-link">Gallery</a>
+    </div>
+  </div>
+
+  <a href="prayer.html" class="hover:text-blue-600 transition">Prayer</a>
+  <a href="giving.html" class="hover:text-blue-600 transition">Giving</a>
   <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+
 </nav>
 
     <button onclick="toggleMenu()" class="md:hidden text-2xl text-blue-700 font-bold">☰</button>
@@ -1672,48 +1776,54 @@ section[id] {
 
   <nav class="flex flex-col px-4 pb-6 space-y-2 text-lg font-medium">
 
-    <a href="#" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>🏠</span><span>Home</span>
-    </a>
+  <a href="#" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    🏠 Home
+  </a>
 
-    <a href="#about" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>📖</span><span>About</span>
-    </a>
+  <a href="#about" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    📖 About
+  </a>
 
-    <a href="#identity" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>📌</span><span>Mission</span>
-    </a>
+  <a href="#identity" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    📌 Mission
+  </a>
 
-    <a href="services.html#services" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>⛪</span><span>Services</span>
-    </a>
+  <!-- SERVICES GROUP -->
+  <div class="px-4 pt-2 text-sm text-white/70">Services</div>
 
-    <a href="services.html#events" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>📅</span><span>Events</span>
-    </a>
+  <a href="services.html#services" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    ⛪ Worship Schedule
+  </a>
 
-    <a href="leadership.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>👥</span><span>Leadership</span>
-    </a>
+  <a href="services.html#events" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    📅 Events
+  </a>
 
-    <!-- ✅ FIXED PRAYER LINK -->
-    <a href="prayer.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>🙏</span><span>Prayer</span>
-    </a>
+  <!-- MINISTRY GROUP -->
+  <div class="px-4 pt-2 text-sm text-white/70">Ministry</div>
 
-    <a href="leadership.html#gallery" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-  <span>🖼️</span><span>Gallery</span>
-</a>
+  <a href="leadership.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    👥 Leadership
+  </a>
 
-    <a href="#giving" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>💳</span><span>Giving</span>
-    </a>
+  <a href="leadership.html#gallery" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    🖼️ Gallery
+  </a>
 
-    <a href="#contact" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>📞</span><span>Contact</span>
-    </a>
+  <!-- SOLO LINKS -->
+  <a href="prayer.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    🙏 Prayer
+  </a>
 
-  </nav>
+  <a href="giving.html" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    💳 Giving
+  </a>
+
+  <a href="#contact" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15">
+    📞 Contact
+  </a>
+
+</nav>>
 
   <div class="absolute bottom-0 left-0 right-0 p-5 border-t border-white/20 bg-black/10">
     <p class="text-xs text-white/80 text-center">Almighty God of Heaven Apostolic Ministry</p>
