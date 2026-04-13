@@ -292,6 +292,291 @@
         height: 26px;
       }
     }
+  
+    /* ========================================
+       MOBILE NAV STANDARD - SOFT GLASS
+    ======================================== */
+    .mobile-menu-toggle {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      background: rgba(255,255,255,0.78);
+      color: #1d4ed8;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      line-height: 1;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+      transition: transform 0.18s ease-out, background 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .mobile-menu-toggle:hover,
+    .mobile-menu-toggle:active {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.92);
+      border-color: rgba(37, 99, 235, 0.22);
+    }
+
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.48);
+      backdrop-filter: blur(3px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+      z-index: 10018;
+    }
+
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-menu-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(84vw, 360px);
+      height: 100vh;
+      color: #ffffff;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.015) 22%, rgba(255,255,255,0) 45%),
+        linear-gradient(160deg, #163f8f 0%, #1d4ed8 40%, #2563eb 72%, #1e40af 100%);
+      box-shadow: -12px 0 28px rgba(15, 23, 42, 0.26);
+      border-left: 1px solid rgba(255,255,255,0.16);
+      border-top-left-radius: 28px;
+      border-bottom-left-radius: 28px;
+      transform: translate3d(108%, 0, 0);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      will-change: transform;
+      transition: transform 0.26s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
+      z-index: 10019;
+      overflow: hidden;
+    }
+
+    .mobile-menu-drawer.active {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-menu-sheen {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.22), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0) 26%);
+      pointer-events: none;
+    }
+
+    .mobile-menu-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: max(16px, env(safe-area-inset-top)) 18px calc(22px + env(safe-area-inset-bottom));
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .mobile-menu-close {
+      align-self: flex-end;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.85rem;
+      line-height: 1;
+      transition: background 0.18s ease-out, transform 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .mobile-menu-close:hover,
+    .mobile-menu-close:active {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.28);
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-brand {
+      text-align: center;
+      padding: 6px 8px 16px;
+    }
+
+    .mobile-menu-brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      margin: 0 auto 12px;
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
+    }
+
+    .mobile-menu-brand h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .mobile-menu-brand p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.04em;
+    }
+
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+      flex: 0 0 auto;
+      min-height: auto;
+      overflow: visible;
+      padding-right: 2px;
+    }
+
+    .mobile-accordion,
+    .mobile-standalone-link {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+
+    .mobile-accordion-toggle,
+    .mobile-standalone-link {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      transition: background 0.18s ease-out, transform 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .mobile-accordion-toggle:hover,
+    .mobile-accordion-toggle:active,
+    .mobile-standalone-link:hover,
+    .mobile-standalone-link:active {
+      background: rgba(255,255,255,0.13);
+    }
+
+    .mobile-chevron {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.86);
+      transition: transform 0.18s ease-out;
+      flex-shrink: 0;
+    }
+
+    .mobile-accordion.open .mobile-chevron {
+      transform: rotate(180deg);
+    }
+
+    .mobile-accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      will-change: max-height, opacity;
+      transition: max-height 0.22s ease-out, opacity 0.16s ease-out;
+    }
+
+    .mobile-accordion.open .mobile-accordion-content {
+      max-height: 220px;
+      opacity: 1;
+    }
+
+    .mobile-accordion-content a {
+      display: block;
+      margin: 0 10px 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      color: rgba(255,255,255,0.86);
+      font-size: 0.93rem;
+      line-height: 1.45;
+      background: rgba(255,255,255,0.05);
+      transition: background 0.16s ease-out, color 0.16s ease-out;
+    }
+
+    .mobile-accordion.open .mobile-accordion-content a:first-child {
+      margin-top: 2px;
+    }
+
+    .mobile-accordion-content a:hover,
+    .mobile-accordion-content a:active {
+      background: rgba(255,255,255,0.11);
+      color: #ffffff;
+      transform: translateX(2px);
+    }
+
+    .mobile-standalone-link {
+      justify-content: flex-start;
+      margin-top: 2px;
+      background: rgba(255,255,255,0.11);
+    }
+
+    .mobile-standalone-link + .mobile-standalone-link {
+      margin-top: -2px;
+    }
+
+    .mobile-menu-footer {
+      text-align: center;
+      font-size: 0.76rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.74);
+      padding-top: 16px;
+      padding-bottom: 6px;
+      margin-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 380px) {
+      .mobile-menu-inner {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .mobile-accordion-toggle,
+      .mobile-standalone-link {
+        padding: 14px 15px;
+        font-size: 0.97rem;
+      }
+
+      .mobile-accordion-content a {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .mobile-menu-overlay,
+      .mobile-menu-drawer {
+        display: none !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -348,8 +633,73 @@
 
       </nav>
 
+      <button id="mobileMenuToggle" type="button" class="mobile-menu-toggle md:hidden" aria-label="Open menu">
+        ☰
+      </button>
+
     </div>
   </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay md:hidden"></div>
+
+  <!-- MOBILE MENU DRAWER -->
+  <aside id="mobileMenuDrawer" class="mobile-menu-drawer md:hidden" aria-hidden="true">
+    <div class="mobile-menu-sheen"></div>
+    <div class="mobile-menu-inner">
+      <button id="mobileMenuClose" class="mobile-menu-close" type="button" aria-label="Close menu">&times;</button>
+
+      <div class="mobile-menu-brand">
+        <img src="https://i.imgur.com/EsoHkMb.png" alt="AGHAM Church Logo">
+        <h2>Welcome to AGHAM</h2>
+        <p>Worship • Grow • Serve</p>
+      </div>
+
+      <nav class="mobile-menu-links" aria-label="Mobile menu">
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-toggle" type="button">
+            <span>Home</span>
+            <span class="mobile-chevron">⌄</span>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="index.html#about">Who We Are</a>
+            <a href="index.html#identity">Mission / Vision / Core Values</a>
+            <a href="index.html#announcements">Announcement</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-toggle" type="button">
+            <span>Services</span>
+            <span class="mobile-chevron">⌄</span>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="services.html#services">Worship Schedule</a>
+            <a href="services.html#events">Events</a>
+          </div>
+        </div>
+
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-toggle" type="button">
+            <span>Ministry</span>
+            <span class="mobile-chevron">⌄</span>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="leadership.html">Leadership</a>
+            <a href="leadership.html#gallery">Gallery</a>
+          </div>
+        </div>
+
+        <a href="prayer.html" class="mobile-standalone-link">Prayer</a>
+        <a href="giving.html" class="mobile-standalone-link">Giving</a>
+      </nav>
+
+      <div class="mobile-menu-footer">
+        © 2026 AGHAM. All rights reserved.
+      </div>
+    </div>
+  </aside>
 
   <!-- HERO / PAGE INTRO -->
   <section class="section-shell overflow-hidden backdrop-blur-[2px] pt-[140px] md:pt-[160px]">
@@ -610,5 +960,98 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
+
+  <script>
+    (function () {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenuClose = document.getElementById('mobileMenuClose');
+      const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+      const accordionItems = Array.from(document.querySelectorAll('.mobile-accordion'));
+      const closeOnLinks = Array.from(document.querySelectorAll('.mobile-accordion-content a, .mobile-standalone-link'));
+
+      if (!mobileMenuToggle || !mobileMenuClose || !mobileMenuOverlay || !mobileMenuDrawer) return;
+
+      function setMobileMenuState(isOpen) {
+        mobileMenuOverlay.classList.toggle('active', isOpen);
+        mobileMenuDrawer.classList.toggle('active', isOpen);
+        mobileMenuDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        document.body.classList.toggle('menu-open', isOpen);
+      }
+
+      function closeAllAccordions(exceptItem = null) {
+        accordionItems.forEach((item) => {
+          if (item !== exceptItem) item.classList.remove('open');
+        });
+      }
+
+      mobileMenuToggle.addEventListener('click', function () {
+        setMobileMenuState(true);
+      });
+
+      mobileMenuClose.addEventListener('click', function () {
+        setMobileMenuState(false);
+      });
+
+      mobileMenuOverlay.addEventListener('click', function () {
+        setMobileMenuState(false);
+      });
+
+      closeOnLinks.forEach((link) => {
+        link.addEventListener('click', function () {
+          setMobileMenuState(false);
+        });
+      });
+
+      accordionItems.forEach((item) => {
+        const toggle = item.querySelector('.mobile-accordion-toggle');
+        if (!toggle) return;
+
+        toggle.addEventListener('click', function () {
+          const willOpen = !item.classList.contains('open');
+          closeAllAccordions(item);
+          item.classList.toggle('open', willOpen);
+        });
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          setMobileMenuState(false);
+        }
+      });
+
+      let startX = 0;
+      let currentX = 0;
+      let isSwiping = false;
+
+      mobileMenuDrawer.addEventListener('touchstart', function (event) {
+        startX = event.touches[0].clientX;
+        currentX = startX;
+        isSwiping = true;
+      }, { passive: true });
+
+      mobileMenuDrawer.addEventListener('touchmove', function (event) {
+        if (!isSwiping || !mobileMenuDrawer.classList.contains('active')) return;
+        currentX = event.touches[0].clientX;
+        const diffX = currentX - startX;
+        if (diffX > 0) {
+          mobileMenuDrawer.style.transform = `translate3d(${diffX}px, 0, 0)`;
+        }
+      }, { passive: true });
+
+      mobileMenuDrawer.addEventListener('touchend', function () {
+        if (!isSwiping) return;
+        const diffX = currentX - startX;
+        mobileMenuDrawer.style.transform = '';
+        if (diffX > 80 && mobileMenuDrawer.classList.contains('active')) {
+          setMobileMenuState(false);
+        }
+        startX = 0;
+        currentX = 0;
+        isSwiping = false;
+      });
+    })();
+  </script>
+
 </body>
 </html>
