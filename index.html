@@ -1717,7 +1717,7 @@ section[id] {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.28s ease, visibility 0.28s ease;
-  z-index: 9997;
+  z-index: 10018;
 }
 
 .mobile-menu-overlay.active {
@@ -1730,7 +1730,7 @@ section[id] {
   position: fixed;
   top: 0;
   right: 0;
-  width: min(84vw, 360px);
+  width: min(88vw, 380px);
   height: 100vh;
   color: #ffffff;
   background:
@@ -1745,7 +1745,7 @@ section[id] {
   visibility: hidden;
   pointer-events: none;
   transition: transform 0.32s ease, opacity 0.28s ease, visibility 0.28s ease;
-  z-index: 9998;
+  z-index: 10019;
   overflow: hidden;
 }
 
@@ -1771,7 +1771,9 @@ section[id] {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: max(18px, env(safe-area-inset-top)) 18px 22px;
+  padding: max(16px, env(safe-area-inset-top)) 18px calc(22px + env(safe-area-inset-bottom));
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .mobile-menu-close {
@@ -1830,9 +1832,9 @@ section[id] {
   flex-direction: column;
   gap: 10px;
   margin-top: 6px;
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
+  flex: 0 0 auto;
+  min-height: auto;
+  overflow: visible;
   padding-right: 2px;
 }
 
@@ -1887,18 +1889,13 @@ section[id] {
 }
 
 .mobile-accordion-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.26s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.28s ease;
 }
 
 .mobile-accordion.open .mobile-accordion-content {
-  grid-template-rows: 1fr;
-}
-
-.mobile-accordion-content > div,
-.mobile-accordion-content {
-  min-height: 0;
+  max-height: 320px;
 }
 
 .mobile-accordion-content a {
@@ -1940,7 +1937,8 @@ section[id] {
   line-height: 1.6;
   color: rgba(255,255,255,0.74);
   padding-top: 16px;
-  margin-top: 14px;
+  padding-bottom: 6px;
+  margin-top: 18px;
   border-top: 1px solid rgba(255,255,255,0.12);
 }
 
@@ -2545,14 +2543,9 @@ document.querySelectorAll(".mobile-menu-link").forEach((link) => {
 });
 
 const mobileAccordions = document.querySelectorAll(".mobile-accordion");
-mobileAccordions.forEach((accordion, index) => {
+mobileAccordions.forEach((accordion) => {
   const toggle = accordion.querySelector(".mobile-accordion-toggle");
   if (!toggle) return;
-
-  if (index === 0) {
-    accordion.classList.add("open");
-    toggle.setAttribute("aria-expanded", "true");
-  }
 
   toggle.addEventListener("click", () => {
     const isOpen = accordion.classList.contains("open");
