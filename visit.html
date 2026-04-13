@@ -11,11 +11,17 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 50%, #f8fafc 100%);
-  color: #0f172a;
-}
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 50%, #f8fafc 100%);
+      color: #0f172a;
+      overflow-x: hidden;
+      margin: 0;
+    }
 
     .section-shell {
       position: relative;
@@ -112,25 +118,256 @@
       transform: translateY(-4px);
       box-shadow: 0 22px 40px rgba(37, 99, 235, 0.10);
     }
+
+    /* NAVBAR SYSTEM */
+    #navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.75);
+      position: fixed;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .logo-glow {
+      box-shadow: 0 0 25px rgba(37, 99, 235, 0.8);
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #2563eb, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-link {
+      transition: color 0.25s ease;
+    }
+
+    .nav-link:hover {
+      color: #2563eb;
+    }
+
+    .nav-link-active {
+      color: #2563eb !important;
+      font-weight: 700;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+      padding: 8px 0;
+      z-index: 10000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+      pointer-events: none;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .nav-dropdown-bridge {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      height: 14px;
+    }
+
+    .nav-dropdown-link {
+      display: block;
+      padding: 12px 18px;
+      font-size: 0.95rem;
+      color: #1f2937;
+      white-space: nowrap;
+      transition: background 0.22s ease, color 0.22s ease;
+    }
+
+    .nav-dropdown-link:hover {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    /* FOOTER STANDARD */
+    .footer-link {
+      transition: color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .footer-link:hover,
+    .footer-link:focus-visible,
+    .footer-link-active {
+      color: #60a5fa !important;
+    }
+
+    .footer-social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    }
+
+    .footer-social-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    /* FLOATING BUTTONS STANDARD */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 998;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    #backToTopBtn:hover {
+      background: #1d4ed8;
+      transform: translateY(-3px);
+    }
+
+    .messenger-float {
+      position: fixed;
+      right: 20px;
+      bottom: 86px;
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #0084ff, #1da1ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(0, 132, 255, 0.35);
+      z-index: 999;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .messenger-float:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 16px 30px rgba(0, 132, 255, 0.45);
+    }
+
+    .messenger-float img {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .messenger-float {
+        right: 16px;
+        bottom: 84px;
+        width: 54px;
+        height: 54px;
+      }
+
+      .messenger-float img {
+        width: 26px;
+        height: 26px;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full border-b border-gray-100 overflow-visible">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center overflow-visible">
+
+      <a href="index.html" class="flex items-center gap-4">
+        <img
+          src="https://i.imgur.com/EsoHkMb.png"
+          alt="AGHAM Church Logo"
+          class="w-16 h-16 rounded-full logo-glow"
+        >
+        <h1 class="text-2xl font-extrabold gradient-text">AGHAM</h1>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 font-medium text-slate-800">
+
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#identity" class="nav-link">Mission</a>
+
+        <!-- SERVICES -->
+        <div class="nav-dropdown">
+          <button type="button" class="flex items-center gap-2 nav-link cursor-pointer">
+            <span>Services</span>
+            <span>▼</span>
+          </button>
+          <div class="nav-dropdown-bridge"></div>
+          <div class="nav-dropdown-menu">
+            <a href="services.html#services" class="nav-dropdown-link">Worship Schedule</a>
+            <a href="services.html#events" class="nav-dropdown-link">Events</a>
+          </div>
+        </div>
+
+        <!-- MINISTRY -->
+        <div class="nav-dropdown">
+          <button type="button" class="flex items-center gap-2 nav-link cursor-pointer">
+            <span>Ministry</span>
+            <span>▼</span>
+          </button>
+          <div class="nav-dropdown-bridge"></div>
+          <div class="nav-dropdown-menu">
+            <a href="leadership.html" class="nav-dropdown-link">Leadership</a>
+            <a href="leadership.html#gallery" class="nav-dropdown-link">Gallery</a>
+          </div>
+        </div>
+
+        <a href="prayer.html" class="nav-link">Prayer</a>
+        <a href="giving.html" class="nav-link">Giving</a>
+        <a href="visit.html" class="nav-link-active">Visit</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+
+      </nav>
+
+    </div>
+  </header>
+
   <!-- HERO / PAGE INTRO -->
-  <section class="section-shell overflow-hidden backdrop-blur-[2px]">
+  <section class="section-shell overflow-hidden backdrop-blur-[2px] pt-[140px] md:pt-[160px]">
     <div class="hero-soft-glow"></div>
 
     <div class="section-container relative z-10 text-center">
       <span class="page-badge" data-aos="fade-up">Plan Your Visit</span>
 
       <h1 class="mt-5 text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight" data-aos="fade-up" data-aos-delay="100">
-  We’d Love to Welcome You to AGHAM CHURCH
-</h1>
+        We’d Love to Welcome You to AGHAM CHURCH
+      </h1>
 
       <p class="mt-5 max-w-3xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-  Here you can find the essential details for your visit—from service time and location
-  to what you can expect when you worship with us at AGHAM Church.
-</p>
+        Here you can find the essential details for your visit—from service time and location
+        to what you can expect when you worship with us at AGHAM Church.
+      </p>
+    </div>
+  </section>
 
   <!-- SERVICE INFO STRIP -->
   <section class="relative px-4 pt-8 pb-6">
@@ -197,107 +434,160 @@
     </div>
   </section>
 
-<!-- WHAT TO EXPECT -->
-<section class="bg-white/70 backdrop-blur-md pt-16 pb-20 px-4 rounded-[32px] mx-4">
-  <div class="max-w-5xl mx-auto text-center">
+  <!-- WHAT TO EXPECT -->
+  <section class="bg-white/70 backdrop-blur-md pt-16 pb-20 px-4 rounded-[32px] mx-4">
+    <div class="max-w-5xl mx-auto text-center">
 
-    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+        What to Expect
+      </h2>
 
-    <p class="text-base md:text-lg text-slate-600 leading-relaxed mb-12 max-w-3xl mx-auto">
-      When you visit AGHAM Church, you will experience a welcoming and Spirit-filled atmosphere where people gather to worship, grow in faith, and connect as one family in Christ.
-    </p>
+      <p class="text-base md:text-lg text-slate-600 leading-relaxed mb-12 max-w-3xl mx-auto">
+        When you visit AGHAM Church, you will experience a welcoming and Spirit-filled atmosphere where people gather to worship, grow in faith, and connect as one family in Christ.
+      </p>
 
-    <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-3 gap-8">
 
-      <!-- Item 1 -->
-      <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up">
-        <div class="text-3xl mb-4">🙏</div>
-        <h3 class="font-bold text-lg text-slate-900 mb-2">Worship & Prayer</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">
-          A time of worship, prayer, and lifting up the Name of Jesus together.
-        </p>
+        <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up">
+          <div class="text-3xl mb-4">🙏</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">Worship & Prayer</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            A time of worship, prayer, and lifting up the Name of Jesus together.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-3xl mb-4">📖</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">The Word</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Biblical teaching that strengthens faith and helps guide your daily walk with God.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-3xl mb-4">🤝</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">Fellowship</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            A warm and friendly environment where you can connect and grow with others.
+          </p>
+        </div>
+
       </div>
 
-      <!-- Item 2 -->
-      <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
-        <div class="text-3xl mb-4">📖</div>
-        <h3 class="font-bold text-lg text-slate-900 mb-2">The Word</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">
-          Biblical teaching that strengthens faith and helps guide your daily walk with God.
-        </p>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
-        <div class="text-3xl mb-4">🤝</div>
-        <h3 class="font-bold text-lg text-slate-900 mb-2">Fellowship</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">
-          A warm and friendly environment where you can connect and grow with others.
-        </p>
-      </div>
+      <p class="mt-14 text-sm text-slate-500" data-aos="fade-up">
+        You don’t have to be perfect—just come as you are.
+      </p>
 
     </div>
-
-    <p class="mt-14 text-sm text-slate-500" data-aos="fade-up">
-  You don’t have to be perfect—just come as you are.
-</p>
-
-  </div>
-</section>
+  </section>
 
   <!-- EXTRA USEFUL INFO -->
-<section class="px-4 pt-6 pb-16">
-  <div class="max-w-5xl mx-auto">
-    <div class="rounded-[28px] bg-white/70 backdrop-blur-md border border-white/60 shadow-[0_14px_35px_rgba(37,99,235,0.08)] p-6 md:p-8">
-      <div class="grid md:grid-cols-2 gap-6">
+  <section class="px-4 pt-6 pb-16">
+    <div class="max-w-5xl mx-auto">
+      <div class="rounded-[28px] bg-white/70 backdrop-blur-md border border-white/60 shadow-[0_14px_35px_rgba(37,99,235,0.08)] p-6 md:p-8">
+        <div class="grid md:grid-cols-2 gap-6">
 
-        <div class="visit-card p-7 text-center" data-aos="fade-up">
-          <div class="text-3xl mb-4">👨‍👩‍👧‍👦</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Come as You Are</h3>
-          <p class="text-slate-600 leading-relaxed">
-            You do not need to worry about dressing a certain way or knowing everything beforehand.
-            We would be glad to welcome you just as you are.
-          </p>
+          <div class="visit-card p-7 text-center" data-aos="fade-up">
+            <div class="text-3xl mb-4">👨‍👩‍👧‍👦</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Come as You Are</h3>
+            <p class="text-slate-600 leading-relaxed">
+              You do not need to worry about dressing a certain way or knowing everything beforehand.
+              We would be glad to welcome you just as you are.
+            </p>
+          </div>
+
+          <div class="visit-card p-7 text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-3xl mb-4">💬</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Need Help?</h3>
+            <p class="text-slate-600 leading-relaxed">
+              If you have questions before your visit, feel free to message us on Facebook.
+              We will gladly help you with directions, service details, or prayer needs.
+            </p>
+          </div>
+
         </div>
-
-        <div class="visit-card p-7 text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="text-3xl mb-4">💬</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Need Help?</h3>
-          <p class="text-slate-600 leading-relaxed">
-            If you have questions before your visit, feel free to message us on Facebook.
-            We will gladly help you with directions, service details, or prayer needs.
-          </p>
-        </div>
-
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- VISIT PAGE FOOTER (COMPACT) -->
-<footer class="px-4 pb-8">
-  <div class="max-w-4xl mx-auto">
-    <div class="rounded-2xl bg-slate-900 text-white px-5 py-6 md:px-8 md:py-7 shadow-[0_12px_30px_rgba(15,23,42,0.16)]">
-      
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-        
+  <!-- FLOATING MESSENGER BUTTON -->
+  <a
+    href="https://m.me/aghamincph"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="messenger-float"
+    aria-label="Message us on Messenger"
+  >
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Icon">
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+
+  <!-- FOOTER STANDARD -->
+  <footer class="bg-gray-950 text-white pt-16 pb-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-10 md:gap-12 text-left">
+
         <div>
-          <h3 class="text-lg md:text-xl font-bold">We’d Love to See You</h3>
-          <p class="mt-1 text-sm text-slate-300">
-            We look forward seeing you at AGHAM Church.
+          <div class="flex items-center gap-4 justify-start">
+            <img src="https://i.imgur.com/EsoHkMb.png"
+                 class="w-16 h-16 rounded-full shadow-[0_10px_30px_rgba(37,99,235,0.22)] border border-white/10"
+                 alt="AGHAM Church Logo">
+            <div>
+              <h2 class="text-xl font-extrabold tracking-tight text-white">AGHAM CHURCH</h2>
+              <p class="text-sm text-blue-300 font-medium">Apostolic Ministry</p>
+            </div>
+          </div>
+
+          <p class="text-sm leading-7 text-gray-400 mt-5 max-w-md">
+            Almighty God of Heaven Apostolic Ministry is dedicated to spreading the Gospel,
+            making disciples, and building a strong faith community centered on Christ.
           </p>
         </div>
 
-        <a href="index.html"
-           class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-white text-blue-800 text-sm font-semibold hover:scale-[1.03] transition duration-300 shadow whitespace-nowrap">
-          ← Back to Home
-        </a>
+        <div>
+          <h3 class="text-base font-bold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2.5 text-sm text-gray-400">
+            <li><a href="index.html#about" class="footer-link">About</a></li>
+            <li><a href="visit.html" class="footer-link footer-link-active">Visit</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="leadership.html" class="footer-link">Leadership</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white mb-4">Contact</h3>
+
+          <div class="space-y-2.5 text-sm text-gray-400">
+            <p>📍 Teresa, Rizal</p>
+            <p>📞 0938-8484-568</p>
+            <p>📧 agham.inc.ph@gmail.com</p>
+          </div>
+
+          <div class="flex flex-wrap justify-start gap-3 text-sm mt-6 mb-3">
+            <a href="https://www.facebook.com/aghamincph"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="footer-social-btn bg-white text-blue-900 border border-white shadow-md hover:bg-blue-50 hover:shadow-[0_10px_24px_rgba(255,255,255,0.14)]">
+              <span>Facebook</span>
+            </a>
+
+            <a href="index.html"
+               class="footer-social-btn bg-white/10 text-white border border-white/15 hover:bg-white/15">
+              <span>Back to Home</span>
+            </a>
+          </div>
+        </div>
 
       </div>
 
+      <div class="mt-10 pt-5 border-t border-white/10 text-left text-xs text-gray-500">
+        © 2026 AGHAM Church. All Rights Reserved.
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
@@ -305,6 +595,20 @@
       duration: 900,
       once: true
     });
+
+    window.addEventListener('scroll', function () {
+      const backToTopBtn = document.getElementById('backToTopBtn');
+
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   </script>
 </body>
 </html>
