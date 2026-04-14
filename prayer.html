@@ -23,6 +23,268 @@
       overflow-x: hidden;
     }
 
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    /* ========================================
+       MOBILE NAV STANDARD - SOFT GLASS
+    ======================================== */
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.48);
+      backdrop-filter: blur(3px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+      z-index: 10018;
+    }
+
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-menu-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(84vw, 360px);
+      height: 100vh;
+      color: #ffffff;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.015) 22%, rgba(255,255,255,0) 45%),
+        linear-gradient(160deg, #163f8f 0%, #1d4ed8 40%, #2563eb 72%, #1e40af 100%);
+      box-shadow: -12px 0 28px rgba(15, 23, 42, 0.26);
+      border-left: 1px solid rgba(255,255,255,0.16);
+      border-top-left-radius: 28px;
+      border-bottom-left-radius: 28px;
+      transform: translate3d(108%, 0, 0);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      will-change: transform;
+      transition: transform 0.26s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
+      z-index: 10019;
+      overflow: hidden;
+    }
+
+    .mobile-menu-drawer.active {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-menu-sheen {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.22), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0) 26%);
+      pointer-events: none;
+    }
+
+    .mobile-menu-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: max(16px, env(safe-area-inset-top)) 18px calc(22px + env(safe-area-inset-bottom));
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .mobile-menu-close {
+      align-self: flex-end;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.85rem;
+      line-height: 1;
+      transition: background 0.18s ease-out, transform 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .mobile-menu-close:hover,
+    .mobile-menu-close:active {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.28);
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-brand {
+      text-align: center;
+      padding: 6px 8px 16px;
+    }
+
+    .mobile-menu-brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      margin: 0 auto 12px;
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
+    }
+
+    .mobile-menu-brand h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .mobile-menu-brand p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.04em;
+    }
+
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+      flex: 0 0 auto;
+      min-height: auto;
+      overflow: visible;
+      padding-right: 2px;
+    }
+
+    .mobile-accordion,
+    .mobile-standalone-link {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+
+    .mobile-accordion-toggle,
+    .mobile-standalone-link {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      transition: background 0.18s ease-out, transform 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .mobile-accordion-toggle:hover,
+    .mobile-accordion-toggle:active,
+    .mobile-standalone-link:hover,
+    .mobile-standalone-link:active {
+      background: rgba(255,255,255,0.13);
+    }
+
+    .mobile-accordion-toggle-active {
+      background: rgba(255,255,255,0.16);
+    }
+
+    .mobile-chevron {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.86);
+      transition: transform 0.18s ease-out;
+      flex-shrink: 0;
+    }
+
+    .mobile-accordion.open .mobile-chevron {
+      transform: rotate(180deg);
+    }
+
+    .mobile-accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      will-change: max-height, opacity;
+      transition: max-height 0.22s ease-out, opacity 0.16s ease-out;
+    }
+
+    .mobile-accordion.open .mobile-accordion-content {
+      max-height: 220px;
+      opacity: 1;
+    }
+
+    .mobile-accordion-content a {
+      display: block;
+      margin: 0 10px 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      color: rgba(255,255,255,0.86);
+      font-size: 0.93rem;
+      line-height: 1.45;
+      background: rgba(255,255,255,0.05);
+      transition: background 0.16s ease-out, color 0.16s ease-out, transform 0.16s ease-out;
+    }
+
+    .mobile-accordion.open .mobile-accordion-content a:first-child {
+      margin-top: 2px;
+    }
+
+    .mobile-accordion-content a:hover,
+    .mobile-accordion-content a:active,
+    .mobile-menu-link-active {
+      background: rgba(255,255,255,0.16) !important;
+      color: #ffffff !important;
+      transform: translateX(2px);
+    }
+
+    .mobile-standalone-link {
+      justify-content: flex-start;
+      margin-top: 2px;
+      background: rgba(255,255,255,0.11);
+    }
+
+    .mobile-menu-footer {
+      text-align: center;
+      font-size: 0.76rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.74);
+      padding-top: 16px;
+      padding-bottom: 6px;
+      margin-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    @media (max-width: 380px) {
+      .mobile-menu-inner {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .mobile-accordion-toggle,
+      .mobile-standalone-link {
+        padding: 14px 15px;
+        font-size: 0.97rem;
+      }
+
+      .mobile-accordion-content a {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .mobile-menu-overlay,
+      .mobile-menu-drawer {
+        display: none !important;
+      }
+    }
+
     .section-shell {
       position: relative;
       padding-top: 92px;
@@ -408,6 +670,10 @@
         <h1 class="text-2xl font-extrabold gradient-text">AGHAM</h1>
       </a>
 
+      <button id="mobileMenuOpen" type="button" class="md:hidden text-3xl leading-none text-blue-700 font-bold" aria-label="Open menu">
+        ☰
+      </button>
+
       <nav class="hidden md:flex items-center gap-6 font-medium text-slate-800">
 
         <a href="index.html" class="nav-link">Home</a>
@@ -448,6 +714,70 @@
 
     </div>
   </header>
+
+  <!-- MOBILE OVERLAY -->
+  <div id="mobileOverlay" class="mobile-menu-overlay md:hidden" onclick="toggleMenu()"></div>
+
+  <!-- MOBILE SIDE MENU -->
+  <div id="mobileMenu" class="mobile-menu-drawer md:hidden" aria-hidden="true">
+    <div class="mobile-menu-sheen"></div>
+
+    <div class="mobile-menu-inner">
+      <button onclick="toggleMenu()" class="mobile-menu-close" aria-label="Close menu">
+        <span>&times;</span>
+      </button>
+
+      <div class="mobile-menu-brand">
+        <img src="https://i.imgur.com/EsoHkMb.png" alt="AGHAM Church Logo">
+        <h2>Welcome to AGHAM</h2>
+        <p>Worship • Grow • Serve</p>
+      </div>
+
+      <nav class="mobile-menu-links" aria-label="Mobile navigation">
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+            <span>Home</span>
+            <span class="mobile-chevron">⌄</span>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="index.html#about" class="mobile-menu-link">Who We Are</a>
+            <a href="index.html#identity" class="mobile-menu-link">Mission / Vision / Core Values</a>
+            <a href="index.html#announcements" class="mobile-menu-link">Announcement</a>
+            <a href="index.html#contact" class="mobile-menu-link">Contact</a>
+          </div>
+        </div>
+
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+            <span>Services</span>
+            <span class="mobile-chevron">⌄</span>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="services.html#services" class="mobile-menu-link">Worship Schedule</a>
+            <a href="services.html#events" class="mobile-menu-link">Events</a>
+          </div>
+        </div>
+
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-toggle" type="button" aria-expanded="false">
+            <span>Ministry</span>
+            <span class="mobile-chevron">⌄</span>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="leadership.html" class="mobile-menu-link">Leadership</a>
+            <a href="leadership.html#gallery" class="mobile-menu-link">Gallery</a>
+          </div>
+        </div>
+
+        <a href="prayer.html" class="mobile-standalone-link mobile-menu-link mobile-menu-link-active">Prayer</a>
+        <a href="giving.html" class="mobile-standalone-link mobile-menu-link">Giving</a>
+      </nav>
+
+      <div class="mobile-menu-footer">
+        © 2026 AGHAM. All rights reserved.
+      </div>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="prayer-hero section-bottom-fade">
@@ -565,6 +895,113 @@
   </footer>
 
   <script>
+    function setMenuState(isOpen) {
+      const menu = document.getElementById("mobileMenu");
+      const overlay = document.getElementById("mobileOverlay");
+
+      if (!menu || !overlay) return;
+
+      if (isOpen) {
+        menu.classList.add("active");
+        overlay.classList.add("active");
+        menu.setAttribute("aria-hidden", "false");
+        document.body.classList.add("menu-open");
+      } else {
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+        menu.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("menu-open");
+      }
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      if (!menu) return;
+      const isOpen = menu.classList.contains("active");
+      setMenuState(!isOpen);
+    }
+
+    const mobileMenuOpen = document.getElementById("mobileMenuOpen");
+    if (mobileMenuOpen) {
+      mobileMenuOpen.addEventListener("click", toggleMenu);
+    }
+
+    const mobileAccordions = document.querySelectorAll(".mobile-accordion");
+    mobileAccordions.forEach((accordion) => {
+      const toggle = accordion.querySelector(".mobile-accordion-toggle");
+      if (!toggle) return;
+
+      toggle.addEventListener("click", () => {
+        const isOpen = accordion.classList.contains("open");
+
+        mobileAccordions.forEach((item) => {
+          item.classList.remove("open");
+          const itemToggle = item.querySelector(".mobile-accordion-toggle");
+          if (itemToggle) {
+            itemToggle.setAttribute("aria-expanded", "false");
+            itemToggle.classList.remove("mobile-accordion-toggle-active");
+          }
+        });
+
+        if (!isOpen) {
+          accordion.classList.add("open");
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.classList.add("mobile-accordion-toggle-active");
+        }
+      });
+    });
+
+    document.querySelectorAll(".mobile-menu-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        setMenuState(false);
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        setMenuState(false);
+      }
+    });
+
+    const mobileMenu = document.getElementById("mobileMenu");
+    let startX = 0;
+    let currentX = 0;
+    let isSwiping = false;
+
+    if (mobileMenu) {
+      mobileMenu.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        currentX = startX;
+        isSwiping = true;
+      }, { passive: true });
+
+      mobileMenu.addEventListener("touchmove", (e) => {
+        if (!isSwiping || !mobileMenu.classList.contains("active")) return;
+
+        currentX = e.touches[0].clientX;
+        const diffX = currentX - startX;
+
+        if (diffX > 0) {
+          mobileMenu.style.transform = `translate3d(${diffX}px, 0, 0)`;
+        }
+      }, { passive: true });
+
+      mobileMenu.addEventListener("touchend", () => {
+        if (!isSwiping) return;
+
+        const diffX = currentX - startX;
+        mobileMenu.style.transform = "";
+
+        if (diffX > 80 && mobileMenu.classList.contains("active")) {
+          setMenuState(false);
+        }
+
+        startX = 0;
+        currentX = 0;
+        isSwiping = false;
+      });
+    }
+
     window.addEventListener('scroll', function () {
       const backToTopBtn = document.getElementById('backToTopBtn');
 
