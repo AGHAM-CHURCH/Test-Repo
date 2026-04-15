@@ -705,6 +705,98 @@
         width: 26px;
         height: 26px;
       }
+
+    /* ===== MOBILE LEADER IMAGE VIEWER ===== */
+    .mobile-leader-trigger {
+      display: block;
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      margin: 0 0 8px;
+      cursor: pointer;
+      border-radius: 14px;
+    }
+
+    .mobile-leader-trigger:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 4px;
+    }
+
+    .leader-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.86);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 10030;
+    }
+
+    .leader-lightbox.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .leader-lightbox-inner {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      transform: scale(0.96);
+      transition: transform 0.25s ease;
+    }
+
+    .leader-lightbox.active .leader-lightbox-inner {
+      transform: scale(1);
+    }
+
+    .leader-lightbox-image {
+      width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 20px;
+      background: #0f172a;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .leader-lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -4px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      color: #ffffff;
+      font-size: 1.75rem;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .leader-lightbox-close:hover,
+    .leader-lightbox-close:active {
+      background: rgba(255,255,255,0.28);
+      transform: scale(1.05);
+    }
+
+    @media (min-width: 992px) {
+      .leader-lightbox {
+        display: none !important;
+      }
     }
   </style>
 </head>
@@ -1057,11 +1149,18 @@
         </div>
       </div>
 
-      <!-- MOBILE ONLY LEADERSHIP (1-2-2-2) -->
+            <!-- MOBILE ONLY LEADERSHIP (1-2-2-2) -->
       <div class="leadership-mobile-a">
         <div class="leadership-mobile-row single">
           <div class="mobile-leader-card">
-            <img src="https://i.imgur.com/NbeBMT1.png" alt="Ptr. Amador Acebuche" class="mobile-leader-image" loading="lazy" decoding="async">
+            <button
+              type="button"
+              class="mobile-leader-trigger"
+              onclick="openLeaderLightbox('https://i.imgur.com/NbeBMT1.png', 'Ptr. Amador Acebuche')"
+              aria-label="View full image of Ptr. Amador Acebuche"
+            >
+              <img src="https://i.imgur.com/NbeBMT1.png" alt="Ptr. Amador Acebuche" class="mobile-leader-image" loading="lazy" decoding="async">
+            </button>
             <h4>Ptr. Amador Acebuche</h4>
             <p>Head Pastor / President</p>
           </div>
@@ -1069,13 +1168,27 @@
 
         <div class="leadership-mobile-row two">
           <div class="mobile-leader-card">
-            <img src="https://i.imgur.com/NU7sUL0.png" alt="Ptr. Rechie Escaros" class="mobile-leader-image" loading="lazy" decoding="async">
+            <button
+              type="button"
+              class="mobile-leader-trigger"
+              onclick="openLeaderLightbox('https://i.imgur.com/NU7sUL0.png', 'Ptr. Rechie Escaros')"
+              aria-label="View full image of Ptr. Rechie Escaros"
+            >
+              <img src="https://i.imgur.com/NU7sUL0.png" alt="Ptr. Rechie Escaros" class="mobile-leader-image" loading="lazy" decoding="async">
+            </button>
             <h4>Ptr. Rechie Escaros</h4>
             <p>Vice President</p>
           </div>
 
           <div class="mobile-leader-card">
-            <img src="https://i.imgur.com/1BtHCyd.png" alt="Ptr. Rodolfo Fidelson" class="mobile-leader-image" loading="lazy" decoding="async">
+            <button
+              type="button"
+              class="mobile-leader-trigger"
+              onclick="openLeaderLightbox('https://i.imgur.com/1BtHCyd.png', 'Ptr. Rodolfo Fidelson')"
+              aria-label="View full image of Ptr. Rodolfo Fidelson"
+            >
+              <img src="https://i.imgur.com/1BtHCyd.png" alt="Ptr. Rodolfo Fidelson" class="mobile-leader-image" loading="lazy" decoding="async">
+            </button>
             <h4>Ptr. Rodolfo Fidelson</h4>
             <p>Pastor</p>
           </div>
@@ -1083,13 +1196,27 @@
 
         <div class="leadership-mobile-row two">
           <div class="mobile-leader-card">
-            <img src="https://i.imgur.com/AxOrIKJ.png" alt="Ptr. Cesar Pajardo" class="mobile-leader-image" loading="lazy" decoding="async">
+            <button
+              type="button"
+              class="mobile-leader-trigger"
+              onclick="openLeaderLightbox('https://i.imgur.com/AxOrIKJ.png', 'Ptr. Cesar Pajardo')"
+              aria-label="View full image of Ptr. Cesar Pajardo"
+            >
+              <img src="https://i.imgur.com/AxOrIKJ.png" alt="Ptr. Cesar Pajardo" class="mobile-leader-image" loading="lazy" decoding="async">
+            </button>
             <h4>Ptr. Cesar Pajardo</h4>
             <p>Pastor</p>
           </div>
 
           <div class="mobile-leader-card">
-            <img src="https://i.imgur.com/U2omQr5.png" alt="Minister Venus Acebuche" class="mobile-leader-image" loading="lazy" decoding="async">
+            <button
+              type="button"
+              class="mobile-leader-trigger"
+              onclick="openLeaderLightbox('https://i.imgur.com/U2omQr5.png', 'Minister Venus Acebuche')"
+              aria-label="View full image of Minister Venus Acebuche"
+            >
+              <img src="https://i.imgur.com/U2omQr5.png" alt="Minister Venus Acebuche" class="mobile-leader-image" loading="lazy" decoding="async">
+            </button>
             <h4>Minister Venus Acebuche</h4>
             <p>Evangelism</p>
           </div>
@@ -1097,20 +1224,32 @@
 
         <div class="leadership-mobile-row two">
           <div class="mobile-leader-card">
-            <img src="https://i.imgur.com/nhKKCnG.png" alt="Sis. Jan Ceiyrell Escaros" class="mobile-leader-image" loading="lazy" decoding="async">
+            <button
+              type="button"
+              class="mobile-leader-trigger"
+              onclick="openLeaderLightbox('https://i.imgur.com/nhKKCnG.png', 'Sis. Jan Ceiyrell Escaros')"
+              aria-label="View full image of Sis. Jan Ceiyrell Escaros"
+            >
+              <img src="https://i.imgur.com/nhKKCnG.png" alt="Sis. Jan Ceiyrell Escaros" class="mobile-leader-image" loading="lazy" decoding="async">
+            </button>
             <h4>Sis. Jan Ceiyrell Escaros</h4>
             <p>Board Secretary</p>
           </div>
 
           <div class="mobile-leader-card">
-            <img src="https://i.imgur.com/nE5Q1pb.png" alt="Sis. Maria Paz Acebuche" class="mobile-leader-image" loading="lazy" decoding="async">
+            <button
+              type="button"
+              class="mobile-leader-trigger"
+              onclick="openLeaderLightbox('https://i.imgur.com/nE5Q1pb.png', 'Sis. Maria Paz Acebuche')"
+              aria-label="View full image of Sis. Maria Paz Acebuche"
+            >
+              <img src="https://i.imgur.com/nE5Q1pb.png" alt="Sis. Maria Paz Acebuche" class="mobile-leader-image" loading="lazy" decoding="async">
+            </button>
             <h4>Sis. Maria Paz Acebuche</h4>
             <p>Board Treasurer</p>
           </div>
         </div>
       </div>
-
-    </div>
   </section>
 
   <!-- GALLERY -->
@@ -1214,6 +1353,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- MOBILE LEADER LIGHTBOX -->
+  <div id="leaderLightbox" class="leader-lightbox" aria-hidden="true" onclick="closeLeaderLightbox(event)">
+    <div class="leader-lightbox-inner">
+      <button type="button" class="leader-lightbox-close" aria-label="Close full image" onclick="closeLeaderLightbox(event)">
+        &times;
+      </button>
+      <img id="leaderLightboxImage" src="" alt="" class="leader-lightbox-image">
+    </div>
+  </div>
 
 <script>
   function setMenuState(isOpen) {
@@ -1336,6 +1485,45 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  function openLeaderLightbox(imageSrc, imageAlt) {
+    if (window.innerWidth >= 992) return;
+
+    const lightbox = document.getElementById('leaderLightbox');
+    const lightboxImage = document.getElementById('leaderLightboxImage');
+
+    if (!lightbox || !lightboxImage) return;
+
+    lightboxImage.src = imageSrc;
+    lightboxImage.alt = imageAlt;
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeLeaderLightbox(event) {
+    if (event) {
+      event.stopPropagation();
+    }
+
+    const lightbox = document.getElementById('leaderLightbox');
+    const lightboxImage = document.getElementById('leaderLightboxImage');
+
+    if (!lightbox || !lightboxImage) return;
+
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+    lightboxImage.alt = '';
+    document.body.classList.remove('menu-open');
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeLeaderLightbox();
+    }
+  });
+
 </script>
 </body>
 </html>
